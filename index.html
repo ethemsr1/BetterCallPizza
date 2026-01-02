@@ -104,20 +104,25 @@
             flex-direction: column;
         }
 
-        .logo-top {
-            color: var(--neon-blue);
-            font-size: 1.2rem;
-            font-weight: 700;
-            line-height: 1;
-            text-shadow: 0 0 5px rgba(0, 242, 234, 0.4);
+        /* YENİ LOGO CSS'İ BURADA */
+        .nav-logo {
+            max-height: 85px; 
+            width: auto;
+            position: absolute;
+            top: 5px;
+            left: 20px;
+            filter: drop-shadow(0 0 5px rgba(0, 242, 234, 0.2));
+            z-index: 1001;
         }
 
-        .logo-bottom {
-            color: var(--neon-red);
-            font-size: 1.2rem;
-            font-weight: 700;
-            line-height: 1;
-            text-shadow: 0 0 5px rgba(255, 0, 85, 0.4);
+        /* Mobilde logo ayarı */
+        @media (max-width: 480px) {
+            .nav-logo {
+                max-height: 60px;
+                top: 5px;
+                left: 10px;
+                position: relative;
+            }
         }
 
         .call-btn {
@@ -361,9 +366,8 @@
     </div>
 
     <nav>
-        <div class="logo-container brand-font">
-            <span class="logo-top">BETTER CALL</span>
-            <span class="logo-bottom">PIZZA</span>
+        <div class="logo-container">
+            <img src="logo.png" alt="Better Call Pizza" class="nav-logo">
         </div>
         <a href="tel:05312551078" class="call-btn">
             <span><i class="fas fa-phone-alt"></i> BİZİ ARAYIN</span>
@@ -379,7 +383,7 @@
     </header>
 
     <div class="menu-wrapper">
-        
+         
         <h2 class="category-header"><i class="fas fa-pizza-slice"></i> PİZZALAR</h2>
         <div class="menu-grid">
             
@@ -439,17 +443,17 @@
                     <div class="card-footer">
                         <span class="price">310₺</span>
                         <a href="tel:05312551078" class="add-btn">SİPARİŞ VER</a>
-                    </div>
-                </div>
+                   </div>
             </div>
         </div>
+    </div>
 
         <h2 class="category-header"><i class="fas fa-utensils"></i> MAKARNALAR</h2>
         <div class="menu-grid">
             
             <div class="menu-card">
                 <div class="card-img-container">
-                    <img src="https://images.unsplash.com/photo-1626844131082-256783844137?w=500&q=80" class="card-img" alt="Penne">
+                     <img src="https://images.unsplash.com/photo-1626844131082-256783844137?w=500&q=80" class="card-img" alt="Penne">
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">Kırmızı Bülten (Arrabbiata)</h3>
@@ -458,14 +462,14 @@
                         <span class="price">220₺</span>
                         <a href="tel:05312551078" class="add-btn">SİPARİŞ VER</a>
                     </div>
-                </div>
+                 </div>
             </div>
 
             <div class="menu-card">
                 <div class="card-img-container">
                     <img src="https://images.unsplash.com/photo-1645112416940-9c6af9bd8e66?w=500&q=80" class="card-img" alt="Alfredo">
                 </div>
-                <div class="card-body">
+                 <div class="card-body">
                     <h3 class="card-title">Kremalı İnfaz (Alfredo)</h3>
                     <p class="card-desc">Kremalı mantar soslu, tavuk parçalı Fettuccine.</p>
                     <div class="card-footer">
@@ -476,16 +480,16 @@
             </div>
 
             <div class="menu-card">
-                <div class="card-img-container">
+                 <div class="card-img-container">
                     <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=500&q=80" class="card-img" alt="Bolognese">
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">Büyük Jüri (Bolognese)</h3>
-                    <p class="card-desc">Ağır ateşte pişmiş kıymalı özel soslu Spaghetti.</p>
+                     <p class="card-desc">Ağır ateşte pişmiş kıymalı özel soslu Spaghetti.</p>
                     <div class="card-footer">
                         <span class="price">260₺</span>
                         <a href="tel:05312551078" class="add-btn">SİPARİŞ VER</a>
-                    </div>
+                   </div>
                 </div>
             </div>
         </div>
@@ -494,22 +498,22 @@
         <div class="menu-grid">
             <div class="menu-card">
                 <div class="card-img-container">
-                    <img src="https://images.unsplash.com/photo-1630360434896-039c36294d9b?w=500&q=80" class="card-img" alt="Fries">
+                     <img src="https://images.unsplash.com/photo-1630360434896-039c36294d9b?w=500&q=80" class="card-img" alt="Fries">
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">Delil Çantası (Patates)</h3>
                     <p class="card-desc">Baharatlı elma dilim patates kızartması.</p>
-                    <div class="card-footer">
+                     <div class="card-footer">
                         <span class="price">90₺</span>
                         <a href="tel:05312551078" class="add-btn">EKLE</a>
                     </div>
-                </div>
+               </div>
             </div>
             <div class="menu-card">
                 <div class="card-img-container">
                     <img src="https://images.unsplash.com/photo-1639024471283-03518883512d?w=500&q=80" class="card-img" alt="Onion Rings">
                 </div>
-                <div class="card-body">
+                 <div class="card-body">
                     <h3 class="card-title">Kelepçe (Soğan Halkası)</h3>
                     <p class="card-desc">8 adet çıtır soğan halkası.</p>
                     <div class="card-footer">
@@ -521,7 +525,7 @@
         </div>
 
         <h2 class="category-header"><i class="fas fa-wine-glass"></i> İÇECEKLER</h2>
-        <div class="menu-grid">
+         <div class="menu-grid">
             <div class="menu-card">
                 <div class="card-img-container" style="height: 150px;">
                     <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&q=80" class="card-img" style="object-fit:contain;" alt="Kola">
@@ -535,7 +539,7 @@
                 </div>
             </div>
             <div class="menu-card">
-                <div class="card-img-container" style="height: 150px;">
+                 <div class="card-img-container" style="height: 150px;">
                     <img src="https://images.unsplash.com/photo-1625772299848-391b6a87d7b3?w=500&q=80" class="card-img" style="object-fit:contain;" alt="Fanta">
                 </div>
                 <div class="card-body">
@@ -547,7 +551,7 @@
                 </div>
             </div>
              <div class="menu-card">
-                <div class="card-img-container" style="height: 150px;">
+                 <div class="card-img-container" style="height: 150px;">
                     <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500&q=80" class="card-img" style="object-fit:contain;" alt="Ayran">
                 </div>
                 <div class="card-body">
@@ -578,7 +582,7 @@
             <div>
                 <strong style="color:white; font-size:1.1rem;">TELEFON</strong><br>
                 <a href="tel:05312551078" style="color:var(--neon-blue); text-decoration:none;">0531 255 10 78</a>
-            </div>
+             </div>
         </div>
 
         <div class="info-item">
@@ -586,7 +590,7 @@
             <div>
                 <strong style="color:white; font-size:1.1rem;">ÇALIŞMA SAATLERİ</strong><br>
                 <span style="color:#aaa;">Her gün: 11:00 - 04:00</span>
-            </div>
+             </div>
         </div>
 
         <div class="map-container">
@@ -595,7 +599,7 @@
                 allowfullscreen="" 
                 loading="lazy">
             </iframe>
-        </div>
+         </div>
         
         <div class="copyright">
             © 2026 Better Call Pizza. Tüm hakları saklıdır.
@@ -604,3 +608,4 @@
 
 </body>
 </html>
+
