@@ -2,431 +2,605 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Better Call Pizza | Mersin</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Teko:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        /* --- 1. NEON & CANLI TASARIM AYARLARI --- */
         :root {
-            --neon-blue: #00f3ff;   /* Logo Mavisi */
-            --neon-red: #ff003c;    /* Logo Kırmızısı */
-            --neon-yellow: #ffe600; /* Vurgu Sarısı */
-            --bg-dark: #090909;     /* Koyu Arkaplan */
+            --neon-blue: #00f2ea;
+            --neon-red: #ff0055;
+            --neon-yellow: #ffe600;
+            --bg-dark: #050505;
             --card-bg: #111;
             
             /* Marka Renkleri */
-            --ys-color: #ff003c;    /* Yemeksepeti */
-            --getir-color: #5d3ebc; /* Getir */
-            --ty-color: #f27a1a;    /* Trendyol */
+            --yemeksepeti: #ea004b;
+            --getir: #5d3ebc;
+            --trendyol: #f27a1a;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
 
         body {
             background-color: var(--bg-dark);
-            color: #fff;
-            font-family: 'Poppins', sans-serif;
-            overflow-x: hidden;
-            /* Arka plana hafif ızgara deseni (Cyberpunk havası) */
             background-image: 
                 linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-            background-size: 50px 50px;
+            background-size: 30px 30px;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            padding-top: 110px; /* Üst barlar için boşluk */
         }
 
-        h1, h2, h3, .brand, .price { font-family: 'Teko', sans-serif; letter-spacing: 1px; text-transform: uppercase; }
+        h1, h2, h3, .brand-font {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+        }
 
-        /* --- 2. SİPARİŞ LOGO BARI (YENİ VE RENKLİ) --- */
+        /* --- DELIVERY BAR (EN ÜST) --- */
         .delivery-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1100;
             background: #000;
-            padding: 10px 0;
+            padding: 8px;
             display: flex;
             justify-content: center;
-            align-items: center;
-            gap: 15px;
-            border-bottom: 1px solid #222;
-            flex-wrap: wrap;
-            position: relative;
-            z-index: 1002;
-        }
-        
-        .platform-btn {
-            display: flex;
-            align-items: center;
             gap: 8px;
-            padding: 8px 20px;
-            border-radius: 50px;
+            border-bottom: 1px solid #222;
+        }
+
+        .delivery-btn {
+            flex: 1;
+            max-width: 140px;
+            padding: 8px 5px;
+            border-radius: 4px;
             text-decoration: none;
             color: #fff;
-            font-weight: bold;
-            font-size: 0.9rem;
-            transition: 0.3s;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            transition: transform 0.2s;
+            text-align: center;
+            white-space: nowrap;
         }
 
-        /* Markalara Özel Renkler */
-        .ys { background: var(--ys-color); border: 2px solid var(--ys-color); }
-        .ys:hover { background: transparent; color: var(--ys-color); box-shadow: 0 0 15px var(--ys-color); }
+        .delivery-btn:hover { transform: translateY(-2px); }
+        .btn-ys { background-color: var(--yemeksepeti); }
+        .btn-getir { background-color: var(--getir); }
+        .btn-trendyol { background-color: var(--trendyol); }
 
-        .gy { background: var(--getir-color); border: 2px solid var(--getir-color); }
-        .gy:hover { background: transparent; color: var(--getir-color); box-shadow: 0 0 15px var(--getir-color); }
-
-        .ty { background: var(--ty-color); border: 2px solid var(--ty-color); }
-        .ty:hover { background: transparent; color: var(--ty-color); box-shadow: 0 0 15px var(--ty-color); }
-
-        /* --- 3. NAVBAR --- */
-        header {
-            position: sticky;
-            top: 0;
-            background: rgba(9, 9, 9, 0.9);
-            backdrop-filter: blur(10px);
-            padding: 10px 5%;
+        /* --- NAVIGATION --- */
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 10px 20px;
+            background: rgba(0, 0, 0, 0.95);
+            position: fixed;
+            top: 45px; /* Delivery bar altı */
+            width: 100%;
             z-index: 1000;
-            border-bottom: 2px solid var(--neon-blue);
-            box-shadow: 0 5px 20px rgba(0, 243, 255, 0.15);
+            border-bottom: 1px solid var(--neon-blue);
+            height: 70px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
         }
 
-        .brand { 
-            font-size: 2rem; 
-            color: var(--neon-blue); 
-            text-shadow: 0 0 10px var(--neon-blue);
-        }
-        .brand span { color: var(--neon-red); text-shadow: 0 0 10px var(--neon-red); }
-
-        nav ul { display: flex; gap: 30px; list-style: none; }
-        nav a { 
-            color: #ccc; text-decoration: none; font-weight: 600; font-size: 1.1rem; 
-            transition: 0.3s; 
-        }
-        nav a:hover { color: var(--neon-yellow); text-shadow: 0 0 10px var(--neon-yellow); }
-
-        .call-btn {
-            background: transparent;
-            color: var(--neon-blue);
-            border: 2px solid var(--neon-blue);
-            padding: 8px 25px;
-            font-weight: bold;
-            border-radius: 4px;
-            text-decoration: none;
-            transition: 0.3s;
-            box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
-        }
-        .call-btn:hover { background: var(--neon-blue); color: #000; box-shadow: 0 0 20px var(--neon-blue); }
-
-        @media(max-width: 768px) { nav { display: none; } .delivery-bar{ gap:10px; padding: 10px 5px;} .platform-btn{ font-size: 0.75rem; padding: 6px 12px;} }
-
-        /* --- 4. HERO SECTION (LOGO ANIMASYONLU) --- */
-        .hero {
-            min-height: 85vh;
+        .logo-container {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+        }
+
+        .logo-top {
+            color: var(--neon-blue);
+            font-size: 1.2rem;
+            font-weight: 700;
+            line-height: 1;
+            text-shadow: 0 0 5px rgba(0, 242, 234, 0.4);
+        }
+
+        .logo-bottom {
+            color: var(--neon-red);
+            font-size: 1.2rem;
+            font-weight: 700;
+            line-height: 1;
+            text-shadow: 0 0 5px rgba(255, 0, 85, 0.4);
+        }
+
+        .call-btn {
+            border: 1px solid var(--neon-blue);
+            padding: 5px 12px;
+            text-decoration: none;
+            color: var(--neon-blue);
+            border-radius: 4px;
+            font-family: 'Oswald', sans-serif;
+            display: flex;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
+        }
+        
+        .call-btn span { font-size: 0.9rem; font-weight: bold; }
+        .call-btn small { font-size: 0.7rem; color: #fff; }
+
+        /* --- HERO --- */
+        .hero {
+            height: 55vh;
+            background: url('https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80') center/cover;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            background: linear-gradient(0deg, var(--bg-dark), transparent), url('https://images.unsplash.com/photo-1590947132387-155cc02f3212?q=80&w=1920&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
+            margin-bottom: 40px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), var(--bg-dark));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
             padding: 20px;
         }
 
-        .logo-wrapper {
-            width: 280px;
-            margin-bottom: 20px;
-            /* Logo nefes alma efekti */
-            animation: glowPulse 3s infinite alternate;
-        }
-        .logo-wrapper img { width: 100%; filter: drop-shadow(0 0 10px rgba(0, 243, 255, 0.5)); }
-
-        @keyframes glowPulse {
-            0% { transform: scale(1); filter: drop-shadow(0 0 10px var(--neon-blue)); }
-            100% { transform: scale(1.05); filter: drop-shadow(0 0 25px var(--neon-blue)); }
-        }
-
         .hero h1 {
-            font-size: 4.5rem;
-            line-height: 1;
+            font-size: 2.5rem;
+            line-height: 1.1;
             margin-bottom: 10px;
+            text-shadow: 2px 2px 0 #000;
+        }
+
+        .neon-badge {
+            background: var(--neon-red);
             color: #fff;
-            text-shadow: 3px 3px 0px var(--neon-red);
+            padding: 2px 8px;
+            font-size: 0.8em;
+            transform: skew(-10deg);
+            display: inline-block;
         }
-        .hero p { font-size: 1.3rem; color: #ddd; margin-bottom: 30px; letter-spacing: 1px; }
 
-        .btn-menu {
-            padding: 15px 45px;
-            background: var(--neon-yellow);
-            color: #000;
-            font-size: 1.5rem;
-            font-family: 'Teko', sans-serif;
-            text-decoration: none;
-            font-weight: bold;
-            clip-path: polygon(10% 0, 100% 0, 100% 80%, 90% 100%, 0 100%, 0 20%);
-            transition: 0.3s;
+        /* --- MENU SECTION --- */
+        .menu-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
         }
-        .btn-menu:hover { transform: scale(1.05); box-shadow: 0 0 25px var(--neon-yellow); }
 
-        /* --- 5. MENÜ --- */
-        .menu-wrap { padding: 80px 5%; }
-        .sec-title { text-align: center; margin-bottom: 50px; font-size: 3.5rem; color: #fff; text-shadow: 0 0 10px var(--neon-blue); }
-
-        .filters { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; flex-wrap: wrap; }
-        .f-btn {
-            background: #222; border: 1px solid #333; color: #fff; padding: 10px 30px; cursor: pointer;
-            font-family: 'Teko', sans-serif; font-size: 1.3rem; transition: 0.3s;
+        .category-header {
+            font-size: 1.8rem;
+            color: var(--neon-yellow);
+            border-bottom: 2px solid var(--neon-blue);
+            padding-bottom: 10px;
+            margin: 40px 0 20px 0;
+            display: inline-block;
         }
-        .f-btn.active, .f-btn:hover { border-color: var(--neon-red); color: var(--neon-red); box-shadow: 0 0 15px rgba(255, 0, 60, 0.3); }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
 
-        .card {
-            background: #141414;
-            border: 1px solid #222;
+        .menu-card {
+            background: var(--card-bg);
+            border: 1px solid #333;
             border-radius: 10px;
             overflow: hidden;
-            transition: 0.4s;
-            position: relative;
-            /* Yüklenince JS ile açılacak */
-            opacity: 0; transform: translateY(30px);
+            transition: transform 0.3s;
         }
         
-        /* Kartın üzerine gelince Neon Parlama */
-        .card:hover {
+        .menu-card:hover {
             border-color: var(--neon-blue);
-            box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
-            transform: translateY(-10px);
+            box-shadow: 0 0 15px rgba(0, 242, 234, 0.1);
         }
 
-        .img-box { height: 220px; overflow: hidden; }
-        .img-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-        .card:hover .img-box img { transform: scale(1.1); }
+        .card-img-container {
+            position: relative;
+            height: 200px;
+        }
 
-        .info { padding: 20px; }
-        .info h3 { font-size: 1.8rem; color: #fff; margin-bottom: 5px; }
-        .info p { color: #888; font-size: 0.9rem; margin-bottom: 15px; min-height: 40px; }
-        
-        .action { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #333; padding-top: 15px; }
-        .price { font-size: 1.8rem; color: var(--neon-yellow); }
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.8);
+            color: var(--neon-yellow);
+            padding: 5px 10px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.8rem;
+            border-radius: 3px;
+            border: 1px solid var(--neon-yellow);
+        }
+
+        .card-body {
+            padding: 15px;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-bottom: 15px;
+            min-height: 40px;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #222;
+            padding-top: 15px;
+        }
+
+        .price {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.4rem;
+            color: var(--neon-blue);
+        }
+
         .add-btn {
-            background: var(--neon-red); color: #fff; text-decoration: none; padding: 5px 15px;
-            border-radius: 4px; font-weight: bold; transition: 0.3s;
+            background: var(--neon-red);
+            color: #fff;
+            border: none;
+            padding: 8px 20px;
+            font-family: 'Oswald', sans-serif;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 0.9rem;
         }
-        .add-btn:hover { background: #fff; color: var(--neon-red); box-shadow: 0 0 15px var(--neon-red); }
 
-        /* --- 6. KONUM (MERSİN VİRANŞEHİR) --- */
-        .location-wrap {
-            background: #050505;
-            padding: 60px 5%;
+        /* --- LOCATION SECTION --- */
+        .location-section {
+            padding: 40px 20px;
+            background-color: #000;
             border-top: 2px solid var(--neon-blue);
-            display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px;
+            margin-top: 50px;
         }
 
-        .loc-details h2 { font-size: 3rem; color: var(--neon-blue); margin-bottom: 20px; }
-        .row { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; font-size: 1.1rem; }
-        .row i { color: var(--neon-red); font-size: 1.4rem; width: 30px; text-align: center; }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--neon-blue);
+            margin-bottom: 30px;
+        }
 
-        .map-box {
-            height: 400px;
-            border: 2px solid #333;
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            gap: 15px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .info-icon {
+            color: var(--neon-red);
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 300px;
+            background-color: #222;
+            margin: 30px auto 0;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 0 15px rgba(0, 243, 255, 0.1);
+            border: 1px solid #333;
+            max-width: 800px;
         }
         
-        /* Haritayı Dark Mode Yapma Hilesi */
-        iframe { width: 100%; height: 100%; border: 0; filter: invert(90%) hue-rotate(180deg); }
-        .map-box:hover iframe { filter: none; transition: 0.5s; }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            filter: invert(90%) hue-rotate(180deg);
+        }
 
-        footer { background: #000; padding: 30px; text-align: center; color: #666; font-size: 0.8rem; }
+        .copyright {
+            text-align: center;
+            margin-top: 30px;
+            color: #444;
+            font-size: 0.8rem;
+            padding-bottom: 20px;
+        }
 
-        /* Animasyon Class'ı */
-        .show { opacity: 1; transform: translateY(0); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
-
-        @media(max-width: 768px) {
-            .location-wrap { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 3.5rem; }
+        /* Mobil Düzenlemeler */
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 2rem; }
+            .delivery-btn i { font-size: 1.1rem; }
+            .delivery-btn span { display: none; } 
+            .delivery-btn::after { content: attr(data-short); display: inline; font-size: 0.7rem; margin-left:5px;}
+            .menu-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
     <div class="delivery-bar">
-        <a href="https://www.yemeksepeti.com" target="_blank" class="platform-btn ys">
-            <i class="fas fa-utensils"></i> Yemeksepeti
+        <a href="https://www.yemeksepeti.com" class="delivery-btn btn-ys" data-short="Yemeksepeti">
+            <i class="fas fa-motorcycle"></i> <span>Yemeksepeti</span>
         </a>
-        <a href="https://getir.com/yemek/" target="_blank" class="platform-btn gy">
-            <i class="fas fa-shopping-bag"></i> GetirYemek
+        <a href="https://getir.com/yemek/" class="delivery-btn btn-getir" data-short="Getir">
+            <i class="fas fa-shopping-bag"></i> <span>GetirYemek</span>
         </a>
-        <a href="https://www.trendyol.com/go/yemek" target="_blank" class="platform-btn ty">
-            <i class="fas fa-motorcycle"></i> Trendyol GO
+        <a href="https://www.trendyol.com/go/trendyol-yemek" class="delivery-btn btn-trendyol" data-short="Trendyol">
+            <i class="fas fa-utensils"></i> <span>Trendyol GO</span>
         </a>
     </div>
 
-    <header>
-        <div class="brand">BETTER CALL <span>PIZZA</span></div>
-        <nav>
-            <ul>
-                <li><a href="#menu">MENÜ</a></li>
-                <li><a href="#contact">KONUM</a></li>
-            </ul>
-        </nav>
+    <nav>
+        <div class="logo-container brand-font">
+            <span class="logo-top">BETTER CALL</span>
+            <span class="logo-bottom">PIZZA</span>
+        </div>
         <a href="tel:05312551078" class="call-btn">
-            <i class="fas fa-phone"></i> 0531 255 10 78
+            <span><i class="fas fa-phone-alt"></i> BİZİ ARAYIN</span>
+            <small>0531 255 10 78</small>
         </a>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>MERSİN'İN <span class="neon-badge">EN TEHLİKELİ</span><br>LEZZETİ</h1>
+            <p style="color: #ddd;">Suç ortağını seç, lezzetin tadını çıkar.</p>
+        </div>
     </header>
 
-    <section class="hero">
-        <div class="logo-wrapper">
-            <img src="logo.png" alt="Neon Logo" onerror="this.style.display='none'">
-        </div>
-        <h1>MERSİN'İN<br>EN TEHLİKELİ LEZZETİ</h1>
-        <p>Viranşehir Sahil Tarafı. Suç Gibi Lezzetli.</p>
-        <a href="#menu" class="btn-menu">MENÜYE GİR</a>
-    </section>
-
-    <section id="menu" class="menu-wrap">
-        <h2 class="sec-title">KANIT LİSTESİ</h2>
-
-        <div class="filters">
-            <button class="f-btn active" onclick="filterMenu('all')">TÜMÜ</button>
-            <button class="f-btn" onclick="filterMenu('pizza')">PİZZA</button>
-            <button class="f-btn" onclick="filterMenu('pasta')">MAKARNA</button>
-            <button class="f-btn" onclick="filterMenu('drink')">İÇECEK & YAN</button>
-        </div>
-
-        <div class="grid">
-            <div class="card" data-cat="pizza">
-                <div class="img-box"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=600" alt="Pizza"></div>
-                <div class="info">
-                    <h3>Ağır Ceza (Special)</h3>
-                    <p>Sucuk, sosis, mantar, mısır, zeytin, biber ve özel sos.</p>
-                    <div class="action"><span class="price">320 ₺</span> <a href="tel:05312551078" class="add-btn">ARA</a></div>
-                </div>
-            </div>
-
-            <div class="card" data-cat="pizza">
-                <div class="img-box"><img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?q=80&w=600" alt="Pepperoni"></div>
-                <div class="info">
-                    <h3>Suç Ortağı (Pepperoni)</h3>
-                    <p>Bol mozzarella ve orjinal dana pepperoni dilimleri.</p>
-                    <div class="action"><span class="price">290 ₺</span> <a href="tel:05312551078" class="add-btn">ARA</a></div>
-                </div>
-            </div>
-
-            <div class="card" data-cat="pasta">
-                <div class="img-box"><img src="https://images.unsplash.com/photo-1626844131082-256783844137?q=80&w=600" alt="Pasta"></div>
-                <div class="info">
-                    <h3>Kremalı İnfaz</h3>
-                    <p>Fettuccine Alfredo. Tavuk, mantar ve krema sos.</p>
-                    <div class="action"><span class="price">250 ₺</span> <a href="tel:05312551078" class="add-btn">ARA</a></div>
-                </div>
-            </div>
-
-            <div class="card" data-cat="pasta">
-                <div class="img-box"><img src="https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?q=80&w=600" alt="Pasta"></div>
-                <div class="info">
-                    <h3>Penne Arrabbiata</h3>
-                    <p>Acı severler için. Sarımsak ve acı biberli domates sos.</p>
-                    <div class="action"><span class="price">220 ₺</span> <a href="tel:05312551078" class="add-btn">ARA</a></div>
-                </div>
-            </div>
-
-            <div class="card" data-cat="drink">
-                <div class="img-box"><img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=600" alt="Kola"></div>
-                <div class="info">
-                    <h3>Kola (330ml)</h3>
-                    <p>Buz gibi kutu kola.</p>
-                    <div class="action"><span class="price">50 ₺</span> <a href="tel:05312551078" class="add-btn">ARA</a></div>
-                </div>
-            </div>
+    <div class="menu-wrapper">
+        
+        <h2 class="category-header"><i class="fas fa-pizza-slice"></i> PİZZALAR</h2>
+        <div class="menu-grid">
             
-            <div class="card" data-cat="drink">
-                <div class="img-box"><img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=600" alt="Şalgam"></div>
-                <div class="info">
-                    <h3>Şalgam Suyu</h3>
-                    <p>Acılı veya Acısız. Adana usulü.</p>
-                    <div class="action"><span class="price">40 ₺</span> <a href="tel:05312551078" class="add-btn">ARA</a></div>
+            <div class="menu-card">
+                <div class="card-img-container">
+                    <span class="badge">ÇOK SATAN</span>
+                    <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=500&q=80" class="card-img" alt="Pepperoni">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Suç Ortağı (Pepperoni)</h3>
+                    <p class="card-desc">Mozzarella peyniri ve orijinal dana pepperoni. Basit, hızlı ve etkili.</p>
+                    <div class="card-footer">
+                        <span class="price">290₺</span>
+                        <a href="tel:05312551078" class="add-btn">SİPARİŞ VER</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="card" data-cat="drink">
-                <div class="img-box"><img src="https://images.unsplash.com/photo-1573080496987-a199f8cd75c5?q=80&w=600" alt="Patates"></div>
-                <div class="info">
-                    <h3>Kanıt Sepeti</h3>
-                    <p>Patates kızartması, soğan halkası ve sosis.</p>
-                    <div class="action"><span class="price">160 ₺</span> <a href="tel:05312551078" class="add-btn">ARA</a></div>
+            <div class="menu-card">
+                <div class="card-img-container">
+                    <span class="badge">ŞEFİN SEÇİMİ</span>
+                    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&q=80" class="card-img" alt="Supreme">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Ağır Ceza (Karışık)</h3>
+                    <p class="card-desc">Sucuk, sosis, mantar, mısır, zeytin, biber. Cezası müebbet lezzet.</p>
+                    <div class="card-footer">
+                        <span class="price">320₺</span>
+                        <a href="tel:05312551078" class="add-btn">SİPARİŞ VER</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="card-img-container">
+                    <span class="badge" style="background: green;">VEJETARYEN</span>
+                    <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500&q=80" class="card-img" alt="Margarita">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Beraat (Margarita)</h3>
+                    <p class="card-desc">Özel domates sosu, bol mozzarella ve taze fesleğen. Temiz bir sayfa.</p>
+                    <div class="card-footer">
+                        <span class="price">250₺</span>
+                        <a href="tel:05312551078" class="add-btn">SİPARİŞ VER</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="card-img-container">
+                    <span class="badge" style="background: red;">ACI</span>
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&q=80" class="card-img" alt="Mexican">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">The Cartel (Meksika)</h3>
+                    <p class="card-desc">Acı sucuk, jalapeno biberi, mısır ve özel acı sos. Ateşle oynama.</p>
+                    <div class="card-footer">
+                        <span class="price">310₺</span>
+                        <a href="tel:05312551078" class="add-btn">SİPARİŞ VER</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <section id="contact" class="location-wrap">
-        <div class="loc-details">
-            <h2>OLAY YERİ</h2>
-            <div class="row">
-                <i class="fas fa-map-marker-alt"></i>
-                <span>Viranşehir Mh. Sahil Yolu, Mersin/Mezitli</span>
+        <h2 class="category-header"><i class="fas fa-utensils"></i> MAKARNALAR</h2>
+        <div class="menu-grid">
+            
+            <div class="menu-card">
+                <div class="card-img-container">
+                    <img src="https://images.unsplash.com/photo-1626844131082-256783844137?w=500&q=80" class="card-img" alt="Penne">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Kırmızı Bülten (Arrabbiata)</h3>
+                    <p class="card-desc">Acı domates soslu, siyah zeytinli ve maydanozlu Penne.</p>
+                    <div class="card-footer">
+                        <span class="price">220₺</span>
+                        <a href="tel:05312551078" class="add-btn">SİPARİŞ VER</a>
+                    </div>
+                </div>
             </div>
-            <div class="row">
-                <i class="fas fa-phone"></i>
-                <span>0531 255 10 78</span>
+
+            <div class="menu-card">
+                <div class="card-img-container">
+                    <img src="https://images.unsplash.com/photo-1645112416940-9c6af9bd8e66?w=500&q=80" class="card-img" alt="Alfredo">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Kremalı İnfaz (Alfredo)</h3>
+                    <p class="card-desc">Kremalı mantar soslu, tavuk parçalı Fettuccine.</p>
+                    <div class="card-footer">
+                        <span class="price">240₺</span>
+                        <a href="tel:05312551078" class="add-btn">SİPARİŞ VER</a>
+                    </div>
+                </div>
             </div>
-            <div class="row">
-                <i class="fas fa-clock"></i>
-                <span>Her gün: 11:00 - 04:00</span>
+
+            <div class="menu-card">
+                <div class="card-img-container">
+                    <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=500&q=80" class="card-img" alt="Bolognese">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Büyük Jüri (Bolognese)</h3>
+                    <p class="card-desc">Ağır ateşte pişmiş kıymalı özel soslu Spaghetti.</p>
+                    <div class="card-footer">
+                        <span class="price">260₺</span>
+                        <a href="tel:05312551078" class="add-btn">SİPARİŞ VER</a>
+                    </div>
+                </div>
             </div>
-            <p style="margin-top:20px; color:#777;">Gelmeden önce arayın, masanızı ayıralım.</p>
         </div>
 
-        <div class="map-box">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3196.262502621415!2d34.5552!3d36.7561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1527f4a27e77b63d%3A0x6c6d059080648931!2zVmlyYW7Fn2VoaXIsIE1leml0bGkvTWVyc2lu!5e0!3m2!1str!2str!4v1689000000000!5m2!1str!2str" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <h2 class="category-header"><i class="fas fa-drumstick-bite"></i> YAN DELİLLER</h2>
+        <div class="menu-grid">
+            <div class="menu-card">
+                <div class="card-img-container">
+                    <img src="https://images.unsplash.com/photo-1630360434896-039c36294d9b?w=500&q=80" class="card-img" alt="Fries">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Delil Çantası (Patates)</h3>
+                    <p class="card-desc">Baharatlı elma dilim patates kızartması.</p>
+                    <div class="card-footer">
+                        <span class="price">90₺</span>
+                        <a href="tel:05312551078" class="add-btn">EKLE</a>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-card">
+                <div class="card-img-container">
+                    <img src="https://images.unsplash.com/photo-1639024471283-03518883512d?w=500&q=80" class="card-img" alt="Onion Rings">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Kelepçe (Soğan Halkası)</h3>
+                    <p class="card-desc">8 adet çıtır soğan halkası.</p>
+                    <div class="card-footer">
+                        <span class="price">80₺</span>
+                        <a href="tel:05312551078" class="add-btn">EKLE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="category-header"><i class="fas fa-wine-glass"></i> İÇECEKLER</h2>
+        <div class="menu-grid">
+            <div class="menu-card">
+                <div class="card-img-container" style="height: 150px;">
+                    <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&q=80" class="card-img" style="object-fit:contain;" alt="Kola">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Coca Cola</h3>
+                    <div class="card-footer">
+                        <span class="price">50₺</span>
+                        <a href="tel:05312551078" class="add-btn">+</a>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-card">
+                <div class="card-img-container" style="height: 150px;">
+                    <img src="https://images.unsplash.com/photo-1625772299848-391b6a87d7b3?w=500&q=80" class="card-img" style="object-fit:contain;" alt="Fanta">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Sprite</h3>
+                    <div class="card-footer">
+                        <span class="price">50₺</span>
+                        <a href="tel:05312551078" class="add-btn">+</a>
+                    </div>
+                </div>
+            </div>
+             <div class="menu-card">
+                <div class="card-img-container" style="height: 150px;">
+                    <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500&q=80" class="card-img" style="object-fit:contain;" alt="Ayran">
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Ayran</h3>
+                    <div class="card-footer">
+                        <span class="price">35₺</span>
+                        <a href="tel:05312551078" class="add-btn">+</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <section class="location-section">
+        <h2 class="section-title">OLAY YERİ</h2>
+        
+        <div class="info-item">
+            <i class="fas fa-map-marker-alt info-icon"></i>
+            <div>
+                <strong style="color:white; font-size:1.1rem;">ADRES</strong><br>
+                <span style="color:#aaa;">Viranşehir, 34343. Sk. No:33010<br>33200 Mezitli/Mersin</span>
+            </div>
+        </div>
+
+        <div class="info-item">
+            <i class="fas fa-phone info-icon"></i>
+            <div>
+                <strong style="color:white; font-size:1.1rem;">TELEFON</strong><br>
+                <a href="tel:05312551078" style="color:var(--neon-blue); text-decoration:none;">0531 255 10 78</a>
+            </div>
+        </div>
+
+        <div class="info-item">
+            <i class="fas fa-clock info-icon"></i>
+            <div>
+                <strong style="color:white; font-size:1.1rem;">ÇALIŞMA SAATLERİ</strong><br>
+                <span style="color:#aaa;">Her gün: 11:00 - 04:00</span>
+            </div>
+        </div>
+
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3198.572183296236!2d34.5623005!3d36.7565319!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1527f54c9c1c69c3%3A0x6b4c10695669074b!2sViran%C5%9Fehir%2C%2034343.%20Sk.%20No%3A33010%2C%2033200%20Mezitli%2FMersin!5e0!3m2!1str!2str!4v1709491234567!5m2!1str!2str" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+        
+        <div class="copyright">
+            © 2026 Better Call Pizza. Tüm hakları saklıdır.
         </div>
     </section>
 
-    <footer>
-        <p>© 2025 Better Call Pizza. Tüm hakları saklıdır. Designed with Neon Passion.</p>
-    </footer>
-
-    <script>
-        // Sayfa yüklendiğinde ve scroll oldukça animasyonlar çalışsın
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting) {
-                    entry.target.classList.add('show');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        window.onload = function() {
-            // Kartları gözlemle
-            const cards = document.querySelectorAll('.card');
-            cards.forEach(card => observer.observe(card));
-        }
-
-        // FİLTRELEME FONKSİYONU
-        function filterMenu(cat) {
-            const cards = document.querySelectorAll('.card');
-            const btns = document.querySelectorAll('.f-btn');
-
-            btns.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-
-            cards.forEach(card => {
-                // Önce gizle
-                card.classList.remove('show');
-                card.style.display = 'none';
-
-                if(cat === 'all' || card.dataset.cat === cat) {
-                    // Seçiliyse göster
-                    card.style.display = 'block';
-                    // Animasyon için minik gecikme
-                    setTimeout(() => card.classList.add('show'), 50);
-                }
-            });
-        }
-    </script>
 </body>
 </html>
