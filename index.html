@@ -12,13 +12,21 @@
             --neon-blue: #00f2ea;
             --neon-red: #ff0055;
             --neon-yellow: #ffe600;
-            --bg-dark: #050505;
+            --neon-purple: #bf00ff;
+            --bg-dark: #0a0a0a;
             --card-bg: #111;
             
             /* Marka Renkleri */
             --yemeksepeti: #ea004b;
             --getir: #5d3ebc;
             --trendyol: #f27a1a;
+
+            /* Sabitler */
+            --header-height: 160px;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         * {
@@ -30,14 +38,10 @@
 
         body {
             background-color: var(--bg-dark);
-            background-image: 
-                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-            background-size: 30px 30px;
             color: #fff;
             font-family: 'Montserrat', sans-serif;
             overflow-x: hidden;
-            padding-top: 110px; /* Üst barlar için boşluk */
+            padding-top: 110px;
         }
 
         h1, h2, h3, .brand-font {
@@ -45,7 +49,12 @@
             text-transform: uppercase;
         }
 
-        /* --- DELIVERY BAR (EN ÜST) --- */
+        /* --- SCROLL HEDEF AYARI --- */
+        .menu-section {
+            scroll-margin-top: 165px;
+        }
+
+        /* --- DELIVERY BAR --- */
         .delivery-bar {
             position: fixed;
             top: 0;
@@ -58,12 +67,14 @@
             justify-content: center;
             gap: 8px;
             border-bottom: 1px solid #222;
+            height: 40px;
+            will-change: transform;
         }
 
         .delivery-btn {
             flex: 1;
             max-width: 140px;
-            padding: 8px 5px;
+            padding: 5px;
             border-radius: 4px;
             text-decoration: none;
             color: #fff;
@@ -73,12 +84,10 @@
             align-items: center;
             justify-content: center;
             gap: 5px;
-            transition: transform 0.2s;
             text-align: center;
             white-space: nowrap;
         }
 
-        .delivery-btn:hover { transform: translateY(-2px); }
         .btn-ys { background-color: var(--yemeksepeti); }
         .btn-getir { background-color: var(--getir); }
         .btn-trendyol { background-color: var(--trendyol); }
@@ -89,40 +98,32 @@
             justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
-            background: rgba(0, 0, 0, 0.95);
+            background: rgba(0, 0, 0, 0.98);
             position: fixed;
-            top: 45px; /* Delivery bar altı */
+            top: 40px;
             width: 100%;
             z-index: 1000;
             border-bottom: 1px solid var(--neon-blue);
             height: 70px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+            will-change: transform;
         }
 
-        .logo-container {
-            display: flex;
-            flex-direction: column;
+        .logo-container { display: flex; flex-direction: column; }
+        
+        .logo-top {
+            color: var(--neon-blue);
+            font-size: 1.2rem;
+            font-weight: 700;
+            line-height: 1;
+            text-shadow: 0 0 2px rgba(0, 242, 234, 0.4);
         }
 
-        /* YENİ LOGO CSS'İ BURADA */
-        .nav-logo {
-            max-height: 85px; 
-            width: auto;
-            position: absolute;
-            top: 5px;
-            left: 20px;
-            filter: drop-shadow(0 0 5px rgba(0, 242, 234, 0.2));
-            z-index: 1001;
-        }
-
-        /* Mobilde logo ayarı */
-        @media (max-width: 480px) {
-            .nav-logo {
-                max-height: 60px;
-                top: 5px;
-                left: 10px;
-                position: relative;
-            }
+        .logo-bottom {
+            color: var(--neon-red);
+            font-size: 1.2rem;
+            font-weight: 700;
+            line-height: 1;
+            text-shadow: 0 0 2px rgba(255, 0, 85, 0.4);
         }
 
         .call-btn {
@@ -141,16 +142,71 @@
         .call-btn span { font-size: 0.9rem; font-weight: bold; }
         .call-btn small { font-size: 0.7rem; color: #fff; }
 
+        /* --- KATEGORİ MENÜSÜ --- */
+        .category-nav-wrapper {
+            position: sticky;
+            top: 110px;
+            z-index: 990;
+            background-image: 
+                linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0.85)),
+                url('https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60');
+            background-size: cover;
+            background-position: center;
+            border-bottom: 1px solid #333;
+            padding: 8px 0;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .category-nav {
+            display: flex;
+            overflow-x: auto;
+            overflow-y: hidden; /* Dikey scrollu tamamen kapat */
+            gap: 8px;
+            padding: 0 10px;
+            list-style: none;
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+            
+            /* SİHİRLİ KOD BURADA: Sadece yatay (X) ekseninde parmak hareketine izin ver */
+            touch-action: pan-x; 
+        }
+
+        .category-nav::-webkit-scrollbar { display: none; }
+
+        .cat-link {
+            color: #ddd;
+            text-decoration: none;
+            white-space: nowrap;
+            padding: 6px 14px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.85rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+            display: inline-block;
+            backdrop-filter: blur(2px);
+        }
+
+        .cat-link.active {
+            background: var(--neon-purple);
+            color: #fff;
+            border-color: var(--neon-purple);
+            box-shadow: 0 0 10px rgba(191, 0, 255, 0.4);
+            transform: scale(1.05);
+        }
+
         /* --- HERO --- */
         .hero {
-            height: 55vh;
-            background: url('https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80') center/cover;
+            height: 35vh;
+            background: url('https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60') center/cover;
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
 
         .hero::before {
@@ -160,14 +216,10 @@
             background: linear-gradient(to bottom, rgba(0,0,0,0.3), var(--bg-dark));
         }
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            padding: 20px;
-        }
-
+        .hero-content { position: relative; z-index: 2; padding: 20px; }
+        
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             line-height: 1.1;
             margin-bottom: 10px;
             text-shadow: 2px 2px 0 #000;
@@ -182,109 +234,130 @@
             display: inline-block;
         }
 
-        /* --- MENU SECTION --- */
+        /* --- MENU --- */
         .menu-wrapper {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 15px;
+            contain: content;
         }
 
         .category-header {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             color: var(--neon-yellow);
-            border-bottom: 2px solid var(--neon-blue);
-            padding-bottom: 10px;
-            margin: 40px 0 20px 0;
-            display: inline-block;
+            border-left: 4px solid var(--neon-purple);
+            padding-left: 15px;
+            margin: 30px 0 20px 0;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(90deg, rgba(255, 230, 0, 0.05), transparent);
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-radius: 0 10px 10px 0;
         }
 
         .menu-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        @media(min-width: 768px) {
+            .menu-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         .menu-card {
             background: var(--card-bg);
             border: 1px solid #333;
-            border-radius: 10px;
+            border-radius: 8px;
             overflow: hidden;
-            transition: transform 0.3s;
+            display: flex;
+            flex-direction: row;
+            height: 130px;
+            transform: translateZ(0);
         }
         
-        .menu-card:hover {
-            border-color: var(--neon-blue);
-            box-shadow: 0 0 15px rgba(0, 242, 234, 0.1);
-        }
-
         .card-img-container {
+            width: 120px;
+            height: 100%;
             position: relative;
-            height: 200px;
+            flex-shrink: 0;
+            background: #222;
         }
 
         .card-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }
-
-        .badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: rgba(0,0,0,0.8);
-            color: var(--neon-yellow);
-            padding: 5px 10px;
-            font-family: 'Oswald', sans-serif;
-            font-size: 0.8rem;
-            border-radius: 3px;
-            border: 1px solid var(--neon-yellow);
+            display: block;
         }
 
         .card-body {
-            padding: 15px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
         }
 
         .card-title {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             color: #fff;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
+            line-height: 1.2;
         }
 
         .card-desc {
-            font-size: 0.9rem;
+            font-size: 0.75rem;
             color: #aaa;
-            margin-bottom: 15px;
-            min-height: 40px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
 
         .card-footer {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid #222;
-            padding-top: 15px;
+            align-items: flex-end;
+            margin-top: 5px;
         }
 
         .price {
             font-family: 'Oswald', sans-serif;
-            font-size: 1.4rem;
-            color: var(--neon-blue);
+            font-size: 1.2rem;
+            color: var(--neon-purple);
+            font-weight: bold;
+        }
+        
+        .old-price {
+            font-size: 0.8rem;
+            text-decoration: line-through;
+            color: #666;
+            margin-right: 5px;
         }
 
         .add-btn {
-            background: var(--neon-red);
-            color: #fff;
-            border: none;
-            padding: 8px 20px;
-            font-family: 'Oswald', sans-serif;
-            border-radius: 5px;
-            cursor: pointer;
+            background: transparent;
+            color: var(--neon-blue);
+            border: 1px solid var(--neon-blue);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 1.2rem;
         }
 
-        /* --- LOCATION SECTION --- */
+        .add-btn:active {
+            background: var(--neon-blue);
+            color: #000;
+        }
+
+        /* --- LOCATION --- */
         .location-section {
             padding: 40px 20px;
             background-color: #000;
@@ -317,7 +390,7 @@
 
         .map-container {
             width: 100%;
-            height: 300px;
+            height: 250px;
             background-color: #222;
             margin: 30px auto 0;
             border-radius: 10px;
@@ -343,11 +416,12 @@
 
         /* Mobil Düzenlemeler */
         @media (max-width: 480px) {
-            .hero h1 { font-size: 2rem; }
+            .hero h1 { font-size: 1.8rem; }
             .delivery-btn i { font-size: 1.1rem; }
             .delivery-btn span { display: none; } 
             .delivery-btn::after { content: attr(data-short); display: inline; font-size: 0.7rem; margin-left:5px;}
-            .menu-grid { grid-template-columns: 1fr; }
+            .category-nav-wrapper { top: 100px; }
+            body { padding-top: 100px; }
         }
     </style>
 </head>
@@ -357,7 +431,7 @@
         <a href="https://www.yemeksepeti.com" class="delivery-btn btn-ys" data-short="Yemeksepeti">
             <i class="fas fa-motorcycle"></i> <span>Yemeksepeti</span>
         </a>
-        <a href="https://getir.com/yemek/" class="delivery-btn btn-getir" data-short="Getir">
+        <a href="https://getir.com/restaurant=6956d24cd8c37ed24484856a&ownerService=2" class="delivery-btn btn-getir" data-short="Getir">
             <i class="fas fa-shopping-bag"></i> <span>GetirYemek</span>
         </a>
         <a href="https://www.trendyol.com/go/trendyol-yemek" class="delivery-btn btn-trendyol" data-short="Trendyol">
@@ -366,14 +440,28 @@
     </div>
 
     <nav>
-        <div class="logo-container">
-            <img src="logo.png" alt="Better Call Pizza" class="nav-logo">
+        <div class="logo-container brand-font">
+            <span class="logo-top">BETTER CALL</span>
+            <span class="logo-bottom">PIZZA</span>
         </div>
         <a href="tel:05312551078" class="call-btn">
             <span><i class="fas fa-phone-alt"></i> BİZİ ARAYIN</span>
             <small>0531 255 10 78</small>
         </a>
     </nav>
+
+    <div class="category-nav-wrapper">
+        <ul class="category-nav" id="categoryNav">
+            <li><a href="#pizza-kucuk" class="cat-link active">Pizza (Küçük)</a></li>
+            <li><a href="#pizza-orta" class="cat-link">Pizza (Orta)</a></li>
+            <li><a href="#pizza-buyuk" class="cat-link">Pizza (Büyük)</a></li>
+            <li><a href="#pizza-jumbo" class="cat-link">Pizza (Jumbo)</a></li>
+            <li><a href="#makarna" class="cat-link">Makarna</a></li>
+            <li><a href="#yan-lezzet" class="cat-link">Yan Lezzet</a></li>
+            <li><a href="#sos" class="cat-link">Sos</a></li>
+            <li><a href="#icecek" class="cat-link">İçecek</a></li>
+        </ul>
+    </div>
 
     <header class="hero">
         <div class="hero-content">
@@ -383,182 +471,485 @@
     </header>
 
     <div class="menu-wrapper">
-         
-        <h2 class="category-header"><i class="fas fa-pizza-slice"></i> PİZZALAR</h2>
-        <div class="menu-grid">
-            
-            <div class="menu-card">
-                <div class="card-img-container">
-                    <span class="badge">ÇOK SATAN</span>
-                    <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=500&q=80" class="card-img" alt="Pepperoni">
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">Suç Ortağı (Pepperoni)</h3>
-                    <p class="card-desc">Mozzarella peyniri ve orijinal dana pepperoni. Basit, hızlı ve etkili.</p>
-                    <div class="card-footer">
-                        <span class="price">290₺</span>
-                        <a href="tel:05312551078" class="add-btn">SİPARİŞ VER</a>
+        
+        <div id="pizza-kucuk" class="menu-section">
+            <h2 class="category-header">Pizza (Küçük Boy)</h2>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=60" loading="lazy" class="card-img" alt="Goodman Pizza">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Goodman Pizza</h3>
+                        <p class="card-desc">Özel sos, mozzarella, sucuk, sosis, mantar.</p>
+                        <div class="card-footer">
+                            <div>
+                                <span class="old-price">225₺</span>
+                                <span class="price">149,90₺</span>
+                            </div>
+                            <a href="tel:05312551078" class="add-btn">+</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="menu-card">
-                <div class="card-img-container">
-                    <span class="badge">ŞEFİN SEÇİMİ</span>
-                    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500&q=80" class="card-img" alt="Supreme">
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">Ağır Ceza (Karışık)</h3>
-                    <p class="card-desc">Sucuk, sosis, mantar, mısır, zeytin, biber. Cezası müebbet lezzet.</p>
-                    <div class="card-footer">
-                        <span class="price">320₺</span>
-                        <a href="tel:05312551078" class="add-btn">SİPARİŞ VER</a>
+                <div class="menu-card">
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&q=60" loading="lazy" class="card-img" alt="Just Peynir">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Just Peynir Pizza</h3>
+                        <p class="card-desc">Bol mozzarella ve özel domates sosu.</p>
+                        <div class="card-footer">
+                            <div>
+                                <span class="old-price">250₺</span>
+                                <span class="price">179,90₺</span>
+                            </div>
+                            <a href="tel:05312551078" class="add-btn">+</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="menu-card">
-                <div class="card-img-container">
-                    <span class="badge" style="background: green;">VEJETARYEN</span>
-                    <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=500&q=80" class="card-img" alt="Margarita">
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">Beraat (Margarita)</h3>
-                    <p class="card-desc">Özel domates sosu, bol mozzarella ve taze fesleğen. Temiz bir sayfa.</p>
-                    <div class="card-footer">
-                        <span class="price">250₺</span>
-                        <a href="tel:05312551078" class="add-btn">SİPARİŞ VER</a>
+                 <div class="menu-card">
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400&q=60" loading="lazy" class="card-img" alt="Walter Pizza">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Walter Pizza</h3>
+                        <p class="card-desc">Mavi özel sos, füme et, soğan.</p>
+                        <div class="card-footer">
+                            <div>
+                                <span class="old-price">250₺</span>
+                                <span class="price">179,90₺</span>
+                            </div>
+                            <a href="tel:05312551078" class="add-btn">+</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="menu-card">
-                <div class="card-img-container">
-                    <span class="badge" style="background: red;">ACI</span>
-                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&q=80" class="card-img" alt="Mexican">
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">The Cartel (Meksika)</h3>
-                    <p class="card-desc">Acı sucuk, jalapeno biberi, mısır ve özel acı sos. Ateşle oynama.</p>
-                    <div class="card-footer">
-                        <span class="price">310₺</span>
-                        <a href="tel:05312551078" class="add-btn">SİPARİŞ VER</a>
-                   </div>
-            </div>
-        </div>
-    </div>
-
-        <h2 class="category-header"><i class="fas fa-utensils"></i> MAKARNALAR</h2>
-        <div class="menu-grid">
-            
-            <div class="menu-card">
-                <div class="card-img-container">
-                     <img src="https://images.unsplash.com/photo-1626844131082-256783844137?w=500&q=80" class="card-img" alt="Penne">
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">Kırmızı Bülten (Arrabbiata)</h3>
-                    <p class="card-desc">Acı domates soslu, siyah zeytinli ve maydanozlu Penne.</p>
-                    <div class="card-footer">
-                        <span class="price">220₺</span>
-                        <a href="tel:05312551078" class="add-btn">SİPARİŞ VER</a>
+                 <div class="menu-card">
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&q=60" loading="lazy" class="card-img" alt="Salamanca Pizza">
                     </div>
-                 </div>
-            </div>
-
-            <div class="menu-card">
-                <div class="card-img-container">
-                    <img src="https://images.unsplash.com/photo-1645112416940-9c6af9bd8e66?w=500&q=80" class="card-img" alt="Alfredo">
-                </div>
-                 <div class="card-body">
-                    <h3 class="card-title">Kremalı İnfaz (Alfredo)</h3>
-                    <p class="card-desc">Kremalı mantar soslu, tavuk parçalı Fettuccine.</p>
-                    <div class="card-footer">
-                        <span class="price">240₺</span>
-                        <a href="tel:05312551078" class="add-btn">SİPARİŞ VER</a>
+                    <div class="card-body">
+                        <h3 class="card-title">Salamanca Pizza</h3>
+                        <p class="card-desc">Acı meksika sosu, jalapeno, kıyma.</p>
+                        <div class="card-footer">
+                            <div>
+                                <span class="old-price">250₺</span>
+                                <span class="price">179,90₺</span>
+                            </div>
+                            <a href="tel:05312551078" class="add-btn">+</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="menu-card">
-                 <div class="card-img-container">
-                    <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=500&q=80" class="card-img" alt="Bolognese">
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">Büyük Jüri (Bolognese)</h3>
-                     <p class="card-desc">Ağır ateşte pişmiş kıymalı özel soslu Spaghetti.</p>
-                    <div class="card-footer">
-                        <span class="price">260₺</span>
-                        <a href="tel:05312551078" class="add-btn">SİPARİŞ VER</a>
-                   </div>
-                </div>
-            </div>
-        </div>
-
-        <h2 class="category-header"><i class="fas fa-drumstick-bite"></i> YAN DELİLLER</h2>
-        <div class="menu-grid">
-            <div class="menu-card">
-                <div class="card-img-container">
-                     <img src="https://images.unsplash.com/photo-1630360434896-039c36294d9b?w=500&q=80" class="card-img" alt="Fries">
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">Delil Çantası (Patates)</h3>
-                    <p class="card-desc">Baharatlı elma dilim patates kızartması.</p>
-                     <div class="card-footer">
-                        <span class="price">90₺</span>
-                        <a href="tel:05312551078" class="add-btn">EKLE</a>
+                <div class="menu-card">
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1593560708920-638709ee05bd?w=400&q=60" loading="lazy" class="card-img" alt="Los Pollos">
                     </div>
-               </div>
-            </div>
-            <div class="menu-card">
-                <div class="card-img-container">
-                    <img src="https://images.unsplash.com/photo-1639024471283-03518883512d?w=500&q=80" class="card-img" alt="Onion Rings">
+                    <div class="card-body">
+                        <h3 class="card-title">Los Pollos Pizza</h3>
+                        <p class="card-desc">Barbekü soslu tavuk, mısır, soğan.</p>
+                        <div class="card-footer">
+                            <div>
+                                <span class="old-price">250₺</span>
+                                <span class="price">179,90₺</span>
+                            </div>
+                            <a href="tel:05312551078" class="add-btn">+</a>
+                        </div>
+                    </div>
                 </div>
-                 <div class="card-body">
-                    <h3 class="card-title">Kelepçe (Soğan Halkası)</h3>
-                    <p class="card-desc">8 adet çıtır soğan halkası.</p>
-                    <div class="card-footer">
-                        <span class="price">80₺</span>
-                        <a href="tel:05312551078" class="add-btn">EKLE</a>
+
+                <div class="menu-card">
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&q=60" loading="lazy" class="card-img" alt="Et Döner">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Et Döner Pizza</h3>
+                        <p class="card-desc">Yaprak et döner, biber, domates.</p>
+                        <div class="card-footer">
+                            <div>
+                                <span class="old-price">250₺</span>
+                                <span class="price">179,90₺</span>
+                            </div>
+                            <a href="tel:05312551078" class="add-btn">+</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=400&q=60" loading="lazy" class="card-img" alt="Breaking Meat">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Breaking Meat Pizza</h3>
+                        <p class="card-desc">Bol etli, kavurmalı özel tarif.</p>
+                        <div class="card-footer">
+                            <div>
+                                <span class="old-price">260₺</span>
+                                <span class="price">189,90₺</span>
+                            </div>
+                            <a href="tel:05312551078" class="add-btn">+</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <h2 class="category-header"><i class="fas fa-wine-glass"></i> İÇECEKLER</h2>
-         <div class="menu-grid">
-            <div class="menu-card">
-                <div class="card-img-container" style="height: 150px;">
-                    <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&q=80" class="card-img" style="object-fit:contain;" alt="Kola">
+        <div id="pizza-orta" class="menu-section">
+            <h2 class="category-header">Pizza (Orta Boy)</h2>
+            <div class="menu-grid">
+                 <div class="menu-card">
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=60" loading="lazy" class="card-img" alt="Goodman Pizza">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Goodman Pizza (Orta)</h3>
+                        <p class="card-desc">Karışık özel lezzet.</p>
+                        <div class="card-footer">
+                            <div>
+                                <span class="old-price">250₺</span>
+                                <span class="price">199,90₺</span>
+                            </div>
+                            <a href="tel:05312551078" class="add-btn">+</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <h3 class="card-title">Coca Cola</h3>
-                    <div class="card-footer">
-                        <span class="price">50₺</span>
-                        <a href="tel:05312551078" class="add-btn">+</a>
+                
+                <div class="menu-card">
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&q=60" loading="lazy" class="card-img" alt="Just Peynir">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Just Peynir (Orta)</h3>
+                        <p class="card-desc">Bol peynirli klasik.</p>
+                        <div class="card-footer">
+                            <div>
+                                <span class="old-price">300₺</span>
+                                <span class="price">249,90₺</span>
+                            </div>
+                            <a href="tel:05312551078" class="add-btn">+</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&q=60" loading="lazy" class="card-img" alt="Salamanca">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Salamanca Pizza (Orta)</h3>
+                        <p class="card-desc">Acı severlere özel.</p>
+                        <div class="card-footer">
+                            <div>
+                                <span class="old-price">300₺</span>
+                                <span class="price">249,90₺</span>
+                            </div>
+                            <a href="tel:05312551078" class="add-btn">+</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1593560708920-638709ee05bd?w=400&q=60" loading="lazy" class="card-img" alt="Los Pollos">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Los Pollos (Orta)</h3>
+                        <p class="card-desc">Tavuklu efsane.</p>
+                        <div class="card-footer">
+                            <div>
+                                <span class="old-price">300₺</span>
+                                <span class="price">249,90₺</span>
+                            </div>
+                            <a href="tel:05312551078" class="add-btn">+</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="menu-card">
-                 <div class="card-img-container" style="height: 150px;">
-                    <img src="https://images.unsplash.com/photo-1625772299848-391b6a87d7b3?w=500&q=80" class="card-img" style="object-fit:contain;" alt="Fanta">
+        </div>
+
+        <div id="pizza-buyuk" class="menu-section">
+            <h2 class="category-header">Pizza (Büyük Boy)</h2>
+            <div class="menu-grid">
+                 <div class="menu-card">
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=60" loading="lazy" class="card-img" alt="Goodman Pizza">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Goodman Pizza (Büyük)</h3>
+                        <p class="card-desc">Doyurucu boy karışık.</p>
+                        <div class="card-footer">
+                            <div>
+                                <span class="old-price">300₺</span>
+                                <span class="price">249,90₺</span>
+                            </div>
+                            <a href="tel:05312551078" class="add-btn">+</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <h3 class="card-title">Sprite</h3>
-                    <div class="card-footer">
-                        <span class="price">50₺</span>
-                        <a href="tel:05312551078" class="add-btn">+</a>
+
+                 <div class="menu-card">
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&q=60" loading="lazy" class="card-img" alt="Peynir">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Just Peynir (Büyük)</h3>
+                        <p class="card-desc">Büyük boy peynir şöleni.</p>
+                        <div class="card-footer">
+                            <div>
+                                <span class="old-price">330₺</span>
+                                <span class="price">289,90₺</span>
+                            </div>
+                            <a href="tel:05312551078" class="add-btn">+</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400&q=60" loading="lazy" class="card-img" alt="Walter">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Walter Pizza (Büyük)</h3>
+                        <p class="card-desc">Büyük suç ortağın.</p>
+                        <div class="card-footer">
+                            <div>
+                                <span class="old-price">350₺</span>
+                                <span class="price">289,90₺</span>
+                            </div>
+                            <a href="tel:05312551078" class="add-btn">+</a>
+                        </div>
                     </div>
                 </div>
             </div>
-             <div class="menu-card">
-                 <div class="card-img-container" style="height: 150px;">
-                    <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500&q=80" class="card-img" style="object-fit:contain;" alt="Ayran">
+        </div>
+
+        <div id="pizza-jumbo" class="menu-section">
+            <h2 class="category-header">Pizza (Jumbo Boy)</h2>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=60" loading="lazy" class="card-img" alt="Goodman Pizza">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Goodman (Jumbo)</h3>
+                        <p class="card-desc">Devasa boy karışık.</p>
+                        <div class="card-footer">
+                            <div>
+                                <span class="old-price">450₺</span>
+                                <span class="price">349,90₺</span>
+                            </div>
+                            <a href="tel:05312551078" class="add-btn">+</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <h3 class="card-title">Soda</h3>
-                    <div class="card-footer">
-                        <span class="price">35₺</span>
-                        <a href="tel:05312551078" class="add-btn">+</a>
+                 <div class="menu-card">
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400&q=60" loading="lazy" class="card-img" alt="Walter">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Walter (Jumbo)</h3>
+                        <p class="card-desc">En büyük boy Walter.</p>
+                        <div class="card-footer">
+                            <div>
+                                <span class="old-price">490₺</span>
+                                <span class="price">379,90₺</span>
+                            </div>
+                            <a href="tel:05312551078" class="add-btn">+</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="makarna" class="menu-section">
+            <h2 class="category-header">Makarna</h2>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1626844131082-256783844137?w=400&q=60" loading="lazy" class="card-img" alt="Köri">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Köri Soslu Tavuklu Penne</h3>
+                        <div class="card-footer">
+                            <div>
+                                <span class="old-price">250₺</span>
+                                <span class="price">199,90₺</span>
+                            </div>
+                            <a href="tel:05312551078" class="add-btn">+</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1645112416940-9c6af9bd8e66?w=400&q=60" loading="lazy" class="card-img" alt="Alfredo">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Fettuccine Alfredo</h3>
+                        <div class="card-footer">
+                            <div>
+                                <span class="old-price">320₺</span>
+                                <span class="price">249,90₺</span>
+                            </div>
+                            <a href="tel:05312551078" class="add-btn">+</a>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="menu-card">
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=400&q=60" loading="lazy" class="card-img" alt="Bolonez">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Spaghetti Bolonez</h3>
+                        <div class="card-footer">
+                            <div>
+                                <span class="old-price">250₺</span>
+                                <span class="price">199,90₺</span>
+                            </div>
+                            <a href="tel:05312551078" class="add-btn">+</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="yan-lezzet" class="menu-section">
+            <h2 class="category-header">Yan Lezzet</h2>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1630360434896-039c36294d9b?w=400&q=60" loading="lazy" class="card-img" alt="Patates">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Patates (Küçük)</h3>
+                        <div class="card-footer">
+                            <div>
+                                <span class="old-price">100₺</span>
+                                <span class="price">59,90₺</span>
+                            </div>
+                            <a href="tel:05312551078" class="add-btn">+</a>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="menu-card">
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1639024471283-03518883512d?w=400&q=60" loading="lazy" class="card-img" alt="Soğan Halkası">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Soğan Halkası (6'lı)</h3>
+                        <div class="card-footer">
+                            <div>
+                                <span class="old-price">100₺</span>
+                                <span class="price">59,90₺</span>
+                            </div>
+                            <a href="tel:05312551078" class="add-btn">+</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1562967914-608f82629710?w=400&q=60" loading="lazy" class="card-img" alt="Nugget">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Tavuk Nugget (6'lı)</h3>
+                        <div class="card-footer">
+                            <div>
+                                <span class="old-price">100₺</span>
+                                <span class="price">79,90₺</span>
+                            </div>
+                            <a href="tel:05312551078" class="add-btn">+</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="sos" class="menu-section">
+            <h2 class="category-header">Soslar</h2>
+            <div class="menu-grid">
+                <div class="menu-card" style="height: 100px;">
+                    <div class="card-body">
+                        <h3 class="card-title">Ketçap</h3>
+                        <div class="card-footer">
+                             <span class="price">9,90₺</span>
+                            <a href="tel:05312551078" class="add-btn">+</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-card" style="height: 100px;">
+                    <div class="card-body">
+                        <h3 class="card-title">Mayonez</h3>
+                        <div class="card-footer">
+                             <span class="price">9,90₺</span>
+                            <a href="tel:05312551078" class="add-btn">+</a>
+                        </div>
+                    </div>
+                </div>
+                 <div class="menu-card" style="height: 100px;">
+                    <div class="card-body">
+                        <h3 class="card-title">Ranch Sos</h3>
+                        <div class="card-footer">
+                             <span class="price">19,90₺</span>
+                            <a href="tel:05312551078" class="add-btn">+</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="icecek" class="menu-section">
+            <h2 class="category-header">İçecekler</h2>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <div class="card-img-container" style="background:white; padding:10px;">
+                        <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=400&q=60" loading="lazy" class="card-img" style="object-fit:contain;" alt="Kola">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Coca Cola (330ml)</h3>
+                        <div class="card-footer">
+                             <div>
+                                <span class="old-price">70₺</span>
+                                <span class="price">49,90₺</span>
+                            </div>
+                            <a href="tel:05312551078" class="add-btn">+</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-card">
+                    <div class="card-img-container" style="background:white; padding:10px;">
+                        <img src="https://images.unsplash.com/photo-1625772299848-391b6a87d7b3?w=400&q=60" loading="lazy" class="card-img" style="object-fit:contain;" alt="Fanta">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Sprite (330ml)</h3>
+                        <div class="card-footer">
+                             <div>
+                                <span class="old-price">70₺</span>
+                                <span class="price">49,90₺</span>
+                            </div>
+                            <a href="tel:05312551078" class="add-btn">+</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <div class="card-img-container" style="background:white; padding:10px;">
+                        <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=400&q=60" loading="lazy" class="card-img" style="object-fit:contain;" alt="Ayran">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Ayran (270ml)</h3>
+                        <div class="card-footer">
+                             <div>
+                                <span class="old-price">55₺</span>
+                                <span class="price">39,90₺</span>
+                            </div>
+                            <a href="tel:05312551078" class="add-btn">+</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -582,7 +973,7 @@
             <div>
                 <strong style="color:white; font-size:1.1rem;">TELEFON</strong><br>
                 <a href="tel:05312551078" style="color:var(--neon-blue); text-decoration:none;">0531 255 10 78</a>
-             </div>
+            </div>
         </div>
 
         <div class="info-item">
@@ -590,7 +981,7 @@
             <div>
                 <strong style="color:white; font-size:1.1rem;">ÇALIŞMA SAATLERİ</strong><br>
                 <span style="color:#aaa;">Her gün: 11:00 - 04:00</span>
-             </div>
+            </div>
         </div>
 
         <div class="map-container">
@@ -599,13 +990,60 @@
                 allowfullscreen="" 
                 loading="lazy">
             </iframe>
-         </div>
+        </div>
         
         <div class="copyright">
             © 2026 Better Call Pizza. Tüm hakları saklıdır.
         </div>
     </section>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('.cat-link');
+            const navContainer = document.querySelector('.category-nav');
+            
+            // Hassas kaydırma takibi (Başlık menünün altına girdiği an tetiklenir)
+            const observerOptions = {
+                root: null,
+                rootMargin: '-160px 0px -65% 0px', 
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        
+                        links.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === '#' + id) {
+                                link.classList.add('active');
+                                
+                                // Butonu ortala
+                                const linkRect = link.getBoundingClientRect();
+                                const navRect = navContainer.getBoundingClientRect();
+                                if (linkRect.left < navRect.left || linkRect.right > navRect.right) {
+                                    link.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                                }
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.menu-section').forEach(section => {
+                observer.observe(section);
+            });
+
+            // Tıklama ile gitme işlemi
+            links.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    links.forEach(l => l.classList.remove('active'));
+                    link.classList.add('active');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
 
