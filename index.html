@@ -161,14 +161,12 @@
         .category-nav {
             display: flex;
             overflow-x: auto;
-            overflow-y: hidden; /* Dikey scrollu tamamen kapat */
+            overflow-y: hidden;
             gap: 8px;
             padding: 0 10px;
             list-style: none;
             scrollbar-width: none;
             -webkit-overflow-scrolling: touch;
-            
-            /* SİHİRLİ KOD BURADA: Sadece yatay (X) ekseninde parmak hareketine izin ver */
             touch-action: pan-x; 
         }
 
@@ -476,121 +474,123 @@
             <h2 class="category-header">Pizza (Küçük Boy)</h2>
             <div class="menu-grid">
                 <div class="menu-card">
-                    <div class="card-img-container">
-                        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=60" loading="lazy" class="card-img" alt="Goodman Pizza">
-                    </div>
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=60" loading="lazy" class="card-img" alt="Goodman Pizza"></div>
                     <div class="card-body">
                         <h3 class="card-title">Goodman Pizza</h3>
-                        <p class="card-desc">Özel sos, mozzarella, sucuk, sosis, mantar.</p>
-                        <div class="card-footer">
-                            <div>
-                                <span class="old-price">225₺</span>
-                                <span class="price">149,90₺</span>
-                            </div>
-                            <a href="tel:05312551078" class="add-btn">+</a>
-                        </div>
+                        <p class="card-desc">Sucuk, sosis, mantar, mısır.</p>
+                        <div class="card-footer"><div><span class="old-price">225₺</span><span class="price">149,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
                     </div>
                 </div>
-
                 <div class="menu-card">
-                    <div class="card-img-container">
-                        <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&q=60" loading="lazy" class="card-img" alt="Just Peynir">
-                    </div>
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&q=60" loading="lazy" class="card-img" alt="Just Peynir Pizza"></div>
                     <div class="card-body">
                         <h3 class="card-title">Just Peynir Pizza</h3>
-                        <p class="card-desc">Bol mozzarella ve özel domates sosu.</p>
-                        <div class="card-footer">
-                            <div>
-                                <span class="old-price">250₺</span>
-                                <span class="price">179,90₺</span>
-                            </div>
-                            <a href="tel:05312551078" class="add-btn">+</a>
-                        </div>
+                        <p class="card-desc">Bol mozzarella keyfi.</p>
+                        <div class="card-footer"><div><span class="old-price">250₺</span><span class="price">179,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
                     </div>
                 </div>
-
-                 <div class="menu-card">
-                    <div class="card-img-container">
-                        <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400&q=60" loading="lazy" class="card-img" alt="Walter Pizza">
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">Walter Pizza</h3>
-                        <p class="card-desc">Mavi özel sos, füme et, soğan.</p>
-                        <div class="card-footer">
-                            <div>
-                                <span class="old-price">250₺</span>
-                                <span class="price">179,90₺</span>
-                            </div>
-                            <a href="tel:05312551078" class="add-btn">+</a>
-                        </div>
-                    </div>
-                </div>
-
-                 <div class="menu-card">
-                    <div class="card-img-container">
-                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&q=60" loading="lazy" class="card-img" alt="Salamanca Pizza">
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">Salamanca Pizza</h3>
-                        <p class="card-desc">Acı meksika sosu, jalapeno, kıyma.</p>
-                        <div class="card-footer">
-                            <div>
-                                <span class="old-price">250₺</span>
-                                <span class="price">179,90₺</span>
-                            </div>
-                            <a href="tel:05312551078" class="add-btn">+</a>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="menu-card">
-                    <div class="card-img-container">
-                        <img src="https://images.unsplash.com/photo-1593560708920-638709ee05bd?w=400&q=60" loading="lazy" class="card-img" alt="Los Pollos">
-                    </div>
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65?w=400&q=60" loading="lazy" class="card-img" alt="Pastırma Low Pizza"></div>
                     <div class="card-body">
-                        <h3 class="card-title">Los Pollos Pizza</h3>
-                        <p class="card-desc">Barbekü soslu tavuk, mısır, soğan.</p>
-                        <div class="card-footer">
-                            <div>
-                                <span class="old-price">250₺</span>
-                                <span class="price">179,90₺</span>
-                            </div>
-                            <a href="tel:05312551078" class="add-btn">+</a>
-                        </div>
+                        <h3 class="card-title">Pastırma Low Pizza</h3>
+                        <p class="card-desc">Pastırma ve özel baharatlar.</p>
+                        <div class="card-footer"><div><span class="old-price">250₺</span><span class="price">179,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
                     </div>
                 </div>
-
                 <div class="menu-card">
-                    <div class="card-img-container">
-                        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&q=60" loading="lazy" class="card-img" alt="Et Döner">
-                    </div>
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&q=60" loading="lazy" class="card-img" alt="Et Döner Pizza"></div>
                     <div class="card-body">
                         <h3 class="card-title">Et Döner Pizza</h3>
-                        <p class="card-desc">Yaprak et döner, biber, domates.</p>
-                        <div class="card-footer">
-                            <div>
-                                <span class="old-price">250₺</span>
-                                <span class="price">179,90₺</span>
-                            </div>
-                            <a href="tel:05312551078" class="add-btn">+</a>
-                        </div>
+                        <p class="card-desc">Et döner parçalarıyla.</p>
+                        <div class="card-footer"><div><span class="old-price">250₺</span><span class="price">179,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
                     </div>
                 </div>
-
                 <div class="menu-card">
-                    <div class="card-img-container">
-                        <img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=400&q=60" loading="lazy" class="card-img" alt="Breaking Meat">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1593560708920-638709ee05bd?w=400&q=60" loading="lazy" class="card-img" alt="Dallas Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Dallas Pizza</h3>
+                        <p class="card-desc">Sucuk, sosis, kaşar.</p>
+                        <div class="card-footer"><div><span class="old-price">250₺</span><span class="price">179,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
                     </div>
+                </div>
+                <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400&q=60" loading="lazy" class="card-img" alt="Salamanca Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Salamanca Pizza</h3>
+                        <p class="card-desc">Acı severlere Meksika sosu.</p>
+                        <div class="card-footer"><div><span class="old-price">250₺</span><span class="price">179,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&q=60" loading="lazy" class="card-img" alt="Los Pollos Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Los Pollos Pizza</h3>
+                        <p class="card-desc">Barbekü tavuk lezzeti.</p>
+                        <div class="card-footer"><div><span class="old-price">250₺</span><span class="price">179,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1528137871618-79d2761e3fd5?w=400&q=60" loading="lazy" class="card-img" alt="Sicilya Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Sicilya Pizza</h3>
+                        <p class="card-desc">Zeytin, mozzarella, kekik.</p>
+                        <div class="card-footer"><div><span class="old-price">250₺</span><span class="price">179,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1614902264771-3316f731c34a?w=400&q=60" loading="lazy" class="card-img" alt="Corleone Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Corleone Pizza</h3>
+                        <p class="card-desc">İtalyan usulü jambon ve mantar.</p>
+                        <div class="card-footer"><div><span class="old-price">250₺</span><span class="price">179,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1555072956-7758afb20e8f?w=400&q=60" loading="lazy" class="card-img" alt="Walter Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Walter Pizza</h3>
+                        <p class="card-desc">Mavi özel soslu tarif.</p>
+                        <div class="card-footer"><div><span class="old-price">250₺</span><span class="price">179,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="" loading="lazy" class="card-img" alt="Ot-Antik Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Ot-Antik Pizza</h3>
+                        <p class="card-desc">Yöresel otlar ve peynir.</p>
+                        <div class="card-footer"><div><span class="old-price">250₺</span><span class="price">179,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&q=60" loading="lazy" class="card-img" alt="Margarita Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Margarita Pizza</h3>
+                        <p class="card-desc">Domates ve mozzarella.</p>
+                        <div class="card-footer"><div><span class="old-price">250₺</span><span class="price">179,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1620374645498-af620e98da55?w=400&q=60" loading="lazy" class="card-img" alt="Kumru Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Kumru Pizza</h3>
+                        <p class="card-desc">Sosis, salam, kaşar.</p>
+                        <div class="card-footer"><div><span class="old-price">250₺</span><span class="price">179,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&q=60" loading="lazy" class="card-img" alt="Viranşehir Sunset"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Viranşehir Sunset</h3>
+                        <p class="card-desc">Acılı ve yöresel lezzet.</p>
+                        <div class="card-footer"><div><span class="old-price">250₺</span><span class="price">179,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=400&q=60" loading="lazy" class="card-img" alt="Breaking Meat Pizza"></div>
                     <div class="card-body">
                         <h3 class="card-title">Breaking Meat Pizza</h3>
-                        <p class="card-desc">Bol etli, kavurmalı özel tarif.</p>
-                        <div class="card-footer">
-                            <div>
-                                <span class="old-price">260₺</span>
-                                <span class="price">189,90₺</span>
-                            </div>
-                            <a href="tel:05312551078" class="add-btn">+</a>
-                        </div>
+                        <p class="card-desc">Bol etli karışık.</p>
+                        <div class="card-footer"><div><span class="old-price">260₺</span><span class="price">189,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
                     </div>
                 </div>
             </div>
@@ -600,70 +600,122 @@
             <h2 class="category-header">Pizza (Orta Boy)</h2>
             <div class="menu-grid">
                  <div class="menu-card">
-                    <div class="card-img-container">
-                        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=60" loading="lazy" class="card-img" alt="Goodman Pizza">
-                    </div>
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=60" loading="lazy" class="card-img" alt="Goodman Pizza"></div>
                     <div class="card-body">
-                        <h3 class="card-title">Goodman Pizza (Orta)</h3>
-                        <p class="card-desc">Karışık özel lezzet.</p>
-                        <div class="card-footer">
-                            <div>
-                                <span class="old-price">250₺</span>
-                                <span class="price">199,90₺</span>
-                            </div>
-                            <a href="tel:05312551078" class="add-btn">+</a>
-                        </div>
+                        <h3 class="card-title">Goodman Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">250₺</span><span class="price">199,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
                     </div>
                 </div>
-                
                 <div class="menu-card">
-                    <div class="card-img-container">
-                        <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&q=60" loading="lazy" class="card-img" alt="Just Peynir">
-                    </div>
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&q=60" loading="lazy" class="card-img" alt="Just Peynir Pizza"></div>
                     <div class="card-body">
-                        <h3 class="card-title">Just Peynir (Orta)</h3>
-                        <p class="card-desc">Bol peynirli klasik.</p>
-                        <div class="card-footer">
-                            <div>
-                                <span class="old-price">300₺</span>
-                                <span class="price">249,90₺</span>
-                            </div>
-                            <a href="tel:05312551078" class="add-btn">+</a>
-                        </div>
+                        <h3 class="card-title">Just Peynir Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">300₺</span><span class="price">249,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
                     </div>
                 </div>
-
                 <div class="menu-card">
-                    <div class="card-img-container">
-                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&q=60" loading="lazy" class="card-img" alt="Salamanca">
-                    </div>
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&q=60" loading="lazy" class="card-img" alt="M-Et Döner Pizza"></div>
                     <div class="card-body">
-                        <h3 class="card-title">Salamanca Pizza (Orta)</h3>
-                        <p class="card-desc">Acı severlere özel.</p>
-                        <div class="card-footer">
-                            <div>
-                                <span class="old-price">300₺</span>
-                                <span class="price">249,90₺</span>
-                            </div>
-                            <a href="tel:05312551078" class="add-btn">+</a>
-                        </div>
+                        <h3 class="card-title">M-Et Döner Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">300₺</span><span class="price">249,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
                     </div>
                 </div>
-
                 <div class="menu-card">
-                    <div class="card-img-container">
-                        <img src="https://images.unsplash.com/photo-1593560708920-638709ee05bd?w=400&q=60" loading="lazy" class="card-img" alt="Los Pollos">
-                    </div>
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65?w=400&q=60" loading="lazy" class="card-img" alt="Pastırma Low Pizza"></div>
                     <div class="card-body">
-                        <h3 class="card-title">Los Pollos (Orta)</h3>
-                        <p class="card-desc">Tavuklu efsane.</p>
-                        <div class="card-footer">
-                            <div>
-                                <span class="old-price">300₺</span>
-                                <span class="price">249,90₺</span>
-                            </div>
-                            <a href="tel:05312551078" class="add-btn">+</a>
-                        </div>
+                        <h3 class="card-title">Pastırma Low Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">300₺</span><span class="price">249,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400&q=60" loading="lazy" class="card-img" alt="Salamanca Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Salamanca Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">300₺</span><span class="price">249,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&q=60" loading="lazy" class="card-img" alt="Los Pollos Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Los Pollos Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">300₺</span><span class="price">249,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1528137871618-79d2761e3fd5?w=400&q=60" loading="lazy" class="card-img" alt="Sicilya Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Sicilya Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">300₺</span><span class="price">249,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1614902264771-3316f731c34a?w=400&q=60" loading="lazy" class="card-img" alt="Corleone Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Corleone Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">300₺</span><span class="price">249,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1555072956-7758afb20e8f?w=400&q=60" loading="lazy" class="card-img" alt="Walter Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Walter Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">300₺</span><span class="price">249,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="card-img-container"><img src="" loading="lazy" class="card-img" alt="Ot-Antik Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Ot-Antik Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">300₺</span><span class="price">249,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&q=60" loading="lazy" class="card-img" alt="Margarita Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Margarita Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">300₺</span><span class="price">249,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1620374645498-af620e98da55?w=400&q=60" loading="lazy" class="card-img" alt="Kumru Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Kumru Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">300₺</span><span class="price">249,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&q=60" loading="lazy" class="card-img" alt="Viranşehir Sunset"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Viranşehir Sunset</h3>
+                        <div class="card-footer"><div><span class="old-price">300₺</span><span class="price">249,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&q=60" loading="lazy" class="card-img" alt="M-Et Döner Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">M-Et Döner Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">350₺</span><span class="price">289,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1593560708920-638709ee05bd?w=400&q=60" loading="lazy" class="card-img" alt="Dallas Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Dallas Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">350₺</span><span class="price">289,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=400&q=60" loading="lazy" class="card-img" alt="Breaking Meat Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Breaking Meat Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">360₺</span><span class="price">299,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400&q=60" loading="lazy" class="card-img" alt="Pastırma Low Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Pastırma Low Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">350₺</span><span class="price">289,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
                     </div>
                 </div>
             </div>
@@ -672,54 +724,109 @@
         <div id="pizza-buyuk" class="menu-section">
             <h2 class="category-header">Pizza (Büyük Boy)</h2>
             <div class="menu-grid">
-                 <div class="menu-card">
-                    <div class="card-img-container">
-                        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=60" loading="lazy" class="card-img" alt="Goodman Pizza">
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">Goodman Pizza (Büyük)</h3>
-                        <p class="card-desc">Doyurucu boy karışık.</p>
-                        <div class="card-footer">
-                            <div>
-                                <span class="old-price">300₺</span>
-                                <span class="price">249,90₺</span>
-                            </div>
-                            <a href="tel:05312551078" class="add-btn">+</a>
-                        </div>
-                    </div>
-                </div>
-
-                 <div class="menu-card">
-                    <div class="card-img-container">
-                        <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&q=60" loading="lazy" class="card-img" alt="Peynir">
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">Just Peynir (Büyük)</h3>
-                        <p class="card-desc">Büyük boy peynir şöleni.</p>
-                        <div class="card-footer">
-                            <div>
-                                <span class="old-price">330₺</span>
-                                <span class="price">289,90₺</span>
-                            </div>
-                            <a href="tel:05312551078" class="add-btn">+</a>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="menu-card">
-                    <div class="card-img-container">
-                        <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400&q=60" loading="lazy" class="card-img" alt="Walter">
-                    </div>
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=60" loading="lazy" class="card-img" alt="Goodman Pizza"></div>
                     <div class="card-body">
-                        <h3 class="card-title">Walter Pizza (Büyük)</h3>
-                        <p class="card-desc">Büyük suç ortağın.</p>
-                        <div class="card-footer">
-                            <div>
-                                <span class="old-price">350₺</span>
-                                <span class="price">289,90₺</span>
-                            </div>
-                            <a href="tel:05312551078" class="add-btn">+</a>
-                        </div>
+                        <h3 class="card-title">Goodman Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">300₺</span><span class="price">249,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&q=60" loading="lazy" class="card-img" alt="Just Peynir Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Just Peynir Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">330₺</span><span class="price">289,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1555072956-7758afb20e8f?w=400&q=60" loading="lazy" class="card-img" alt="Walter Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Walter Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">350₺</span><span class="price">289,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&q=60" loading="lazy" class="card-img" alt="Salamanca Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Salamanca Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">350₺</span><span class="price">289,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1593560708920-638709ee05bd?w=400&q=60" loading="lazy" class="card-img" alt="Los Pollos Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Los Pollos Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">350₺</span><span class="price">289,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1528137871618-79d2761e3fd5?w=400&q=60" loading="lazy" class="card-img" alt="Sicilya Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Sicilya Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">350₺</span><span class="price">289,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1614902264771-3316f731c34a?w=400&q=60" loading="lazy" class="card-img" alt="Corleone Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Corleone Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">350₺</span><span class="price">289,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="" loading="lazy" class="card-img" alt="Ot-Antik Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Ot-Antik Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">350₺</span><span class="price">289,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&q=60" loading="lazy" class="card-img" alt="Margarita Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Margarita Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">350₺</span><span class="price">289,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1620374645498-af620e98da55?w=400&q=60" loading="lazy" class="card-img" alt="Kumru Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Kumru Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">350₺</span><span class="price">289,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&q=60" loading="lazy" class="card-img" alt="Viranşehir Sunset"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Viranşehir Sunset</h3>
+                        <div class="card-footer"><div><span class="old-price">350₺</span><span class="price">289,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&q=60" loading="lazy" class="card-img" alt="M-Et Döner Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">M-Et Döner Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">350₺</span><span class="price">289,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1593560708920-638709ee05bd?w=400&q=60" loading="lazy" class="card-img" alt="Dallas Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Dallas Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">350₺</span><span class="price">289,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=400&q=60" loading="lazy" class="card-img" alt="Breaking Meat Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Breaking Meat Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">360₺</span><span class="price">299,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400&q=60" loading="lazy" class="card-img" alt="Pastırma Low Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Pastırma Low Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">350₺</span><span class="price">289,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
                     </div>
                 </div>
             </div>
@@ -729,35 +836,108 @@
             <h2 class="category-header">Pizza (Jumbo Boy)</h2>
             <div class="menu-grid">
                 <div class="menu-card">
-                    <div class="card-img-container">
-                        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=60" loading="lazy" class="card-img" alt="Goodman Pizza">
-                    </div>
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=60" loading="lazy" class="card-img" alt="Goodman Pizza"></div>
                     <div class="card-body">
-                        <h3 class="card-title">Goodman (Jumbo)</h3>
-                        <p class="card-desc">Devasa boy karışık.</p>
-                        <div class="card-footer">
-                            <div>
-                                <span class="old-price">450₺</span>
-                                <span class="price">349,90₺</span>
-                            </div>
-                            <a href="tel:05312551078" class="add-btn">+</a>
-                        </div>
+                        <h3 class="card-title">Goodman Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">450₺</span><span class="price">349,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&q=60" loading="lazy" class="card-img" alt="Just Peynir Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Just Peynir Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">490₺</span><span class="price">379,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400&q=60" loading="lazy" class="card-img" alt="Pastırma Low Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Pastırma Low Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">490₺</span><span class="price">379,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
                     </div>
                 </div>
                  <div class="menu-card">
-                    <div class="card-img-container">
-                        <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400&q=60" loading="lazy" class="card-img" alt="Walter">
-                    </div>
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&q=60" loading="lazy" class="card-img" alt="Salamanca Pizza"></div>
                     <div class="card-body">
-                        <h3 class="card-title">Walter (Jumbo)</h3>
-                        <p class="card-desc">En büyük boy Walter.</p>
-                        <div class="card-footer">
-                            <div>
-                                <span class="old-price">490₺</span>
-                                <span class="price">379,90₺</span>
-                            </div>
-                            <a href="tel:05312551078" class="add-btn">+</a>
-                        </div>
+                        <h3 class="card-title">Salamanca Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">490₺</span><span class="price">379,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1593560708920-638709ee05bd?w=400&q=60" loading="lazy" class="card-img" alt="Los Pollos Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Los Pollos Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">490₺</span><span class="price">379,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1528137871618-79d2761e3fd5?w=400&q=60" loading="lazy" class="card-img" alt="Sicilya Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Sicilya Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">490₺</span><span class="price">379,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1614902264771-3316f731c34a?w=400&q=60" loading="lazy" class="card-img" alt="Corleone Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Corleone Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">490₺</span><span class="price">379,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1555072956-7758afb20e8f?w=400&q=60" loading="lazy" class="card-img" alt="Walter Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Walter Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">490₺</span><span class="price">379,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="" loading="lazy" class="card-img" alt="Ot-Antik Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Ot-Antik Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">490₺</span><span class="price">379,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&q=60" loading="lazy" class="card-img" alt="Margarita Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Margarita Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">490₺</span><span class="price">379,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1620374645498-af620e98da55?w=400&q=60" loading="lazy" class="card-img" alt="Kumru Pizza"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Kumru Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">490₺</span><span class="price">379,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400&q=60" loading="lazy" class="card-img" alt="Viransehir"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Viranşehir Sunset</h3>
+                        <div class="card-footer"><div><span class="old-price">490₺</span><span class="price">379,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=400&q=60" loading="lazy" class="card-img" alt="Meat"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Breaking Meat Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">490₺</span><span class="price">389,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&q=60" loading="lazy" class="card-img" alt="Et Döner"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">M-Et Döner Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">490₺</span><span class="price">379,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1593560708920-638709ee05bd?w=400&q=60" loading="lazy" class="card-img" alt="Dallas"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Dallas Pizza</h3>
+                        <div class="card-footer"><div><span class="old-price">490₺</span><span class="price">379,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
                     </div>
                 </div>
             </div>
@@ -767,50 +947,38 @@
             <h2 class="category-header">Makarna</h2>
             <div class="menu-grid">
                 <div class="menu-card">
-                    <div class="card-img-container">
-                        <img src="https://images.unsplash.com/photo-1626844131082-256783844137?w=400&q=60" loading="lazy" class="card-img" alt="Köri">
-                    </div>
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1626844131082-256783844137?w=400&q=60" loading="lazy" class="card-img" alt="Köri"></div>
                     <div class="card-body">
-                        <h3 class="card-title">Köri Soslu Tavuklu Penne</h3>
-                        <div class="card-footer">
-                            <div>
-                                <span class="old-price">250₺</span>
-                                <span class="price">199,90₺</span>
-                            </div>
-                            <a href="tel:05312551078" class="add-btn">+</a>
-                        </div>
+                        <h3 class="card-title">Köri Soslu Tavuklu Mantarlı Penne</h3>
+                        <div class="card-footer"><div><span class="old-price">250₺</span><span class="price">199,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
                     </div>
                 </div>
-
-                <div class="menu-card">
-                    <div class="card-img-container">
-                        <img src="https://images.unsplash.com/photo-1645112416940-9c6af9bd8e66?w=400&q=60" loading="lazy" class="card-img" alt="Alfredo">
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">Fettuccine Alfredo</h3>
-                        <div class="card-footer">
-                            <div>
-                                <span class="old-price">320₺</span>
-                                <span class="price">249,90₺</span>
-                            </div>
-                            <a href="tel:05312551078" class="add-btn">+</a>
-                        </div>
-                    </div>
-                </div>
-
                  <div class="menu-card">
-                    <div class="card-img-container">
-                        <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=400&q=60" loading="lazy" class="card-img" alt="Bolonez">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1611270629569-8b357cb88da9?w=400&q=60" loading="lazy" class="card-img" alt="Kremalı"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Kremalı Tavuklu Mantarlı Penne</h3>
+                        <div class="card-footer"><div><span class="old-price">250₺</span><span class="price">199,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
                     </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?w=400&q=60" loading="lazy" class="card-img" alt="Sebzeli"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Sebzeli Makarna</h3>
+                        <div class="card-footer"><div><span class="old-price">250₺</span><span class="price">199,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=400&q=60" loading="lazy" class="card-img" alt="Bolonez"></div>
                     <div class="card-body">
                         <h3 class="card-title">Spaghetti Bolonez</h3>
-                        <div class="card-footer">
-                            <div>
-                                <span class="old-price">250₺</span>
-                                <span class="price">199,90₺</span>
-                            </div>
-                            <a href="tel:05312551078" class="add-btn">+</a>
-                        </div>
+                        <div class="card-footer"><div><span class="old-price">250₺</span><span class="price">199,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1645112416940-9c6af9bd8e66?w=400&q=60" loading="lazy" class="card-img" alt="Alfredo"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Fettuccine Alfredo</h3>
+                        <div class="card-footer"><div><span class="old-price">320₺</span><span class="price">249,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
                     </div>
                 </div>
             </div>
@@ -820,50 +988,80 @@
             <h2 class="category-header">Yan Lezzet</h2>
             <div class="menu-grid">
                 <div class="menu-card">
-                    <div class="card-img-container">
-                        <img src="https://images.unsplash.com/photo-1630360434896-039c36294d9b?w=400&q=60" loading="lazy" class="card-img" alt="Patates">
-                    </div>
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1630360434896-039c36294d9b?w=400&q=60" loading="lazy" class="card-img" alt="Patates"></div>
                     <div class="card-body">
-                        <h3 class="card-title">Patates (Küçük)</h3>
-                        <div class="card-footer">
-                            <div>
-                                <span class="old-price">100₺</span>
-                                <span class="price">59,90₺</span>
-                            </div>
-                            <a href="tel:05312551078" class="add-btn">+</a>
-                        </div>
+                        <h3 class="card-title">Patates Kızartması (Küçük Boy)</h3>
+                        <div class="card-footer"><div><span class="old-price">100₺</span><span class="price">59,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
                     </div>
                 </div>
-
-                 <div class="menu-card">
-                    <div class="card-img-container">
-                        <img src="https://images.unsplash.com/photo-1639024471283-03518883512d?w=400&q=60" loading="lazy" class="card-img" alt="Soğan Halkası">
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">Soğan Halkası (6'lı)</h3>
-                        <div class="card-footer">
-                            <div>
-                                <span class="old-price">100₺</span>
-                                <span class="price">59,90₺</span>
-                            </div>
-                            <a href="tel:05312551078" class="add-btn">+</a>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="menu-card">
-                    <div class="card-img-container">
-                        <img src="https://images.unsplash.com/photo-1562967914-608f82629710?w=400&q=60" loading="lazy" class="card-img" alt="Nugget">
-                    </div>
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1630360434896-039c36294d9b?w=400&q=60" loading="lazy" class="card-img" alt="Patates"></div>
                     <div class="card-body">
-                        <h3 class="card-title">Tavuk Nugget (6'lı)</h3>
-                        <div class="card-footer">
-                            <div>
-                                <span class="old-price">100₺</span>
-                                <span class="price">79,90₺</span>
-                            </div>
-                            <a href="tel:05312551078" class="add-btn">+</a>
-                        </div>
+                        <h3 class="card-title">Patates Kızartması (Orta Boy)</h3>
+                        <div class="card-footer"><div><span class="old-price">110₺</span><span class="price">69,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1630360434896-039c36294d9b?w=400&q=60" loading="lazy" class="card-img" alt="Patates"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Patates Kızartması (Büyük Boy)</h3>
+                        <div class="card-footer"><div><span class="old-price">120₺</span><span class="price">79,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1630360434896-039c36294d9b?w=400&q=60" loading="lazy" class="card-img" alt="Patates"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Patates Kızartması (Jumbo Boy)</h3>
+                        <div class="card-footer"><div><span class="old-price">130₺</span><span class="price">89,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1573140247632-f84660f67126?w=400&q=60" loading="lazy" class="card-img" alt="Ekmek"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Sarımsaklı Ekmek</h3>
+                        <div class="card-footer"><div><span class="old-price">180₺</span><span class="price">99,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1639024471283-03518883512d?w=400&q=60" loading="lazy" class="card-img" alt="Soğan"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Soğan Halkası (6 Adet)</h3>
+                        <div class="card-footer"><div><span class="old-price">100₺</span><span class="price">59,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1639024471283-03518883512d?w=400&q=60" loading="lazy" class="card-img" alt="Soğan"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Soğan Halkası (12 Adet)</h3>
+                        <div class="card-footer"><div><span class="old-price">120₺</span><span class="price">99,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1562967914-608f82629710?w=400&q=60" loading="lazy" class="card-img" alt="Nugget"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Tavuk Nugget (6 Adet)</h3>
+                        <div class="card-footer"><div><span class="old-price">100₺</span><span class="price">79,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1562967914-608f82629710?w=400&q=60" loading="lazy" class="card-img" alt="Nugget"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Tavuk Nugget (10 Adet)</h3>
+                        <div class="card-footer"><div><span class="old-price">120₺</span><span class="price">99,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1630431341973-02e1b403436d?w=400&q=60" loading="lazy" class="card-img" alt="Elma"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Elma Dilim Patates (Orta Boy)</h3>
+                        <div class="card-footer"><div><span class="old-price">110₺</span><span class="price">89,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                 <div class="menu-card">
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1630431341973-02e1b403436d?w=400&q=60" loading="lazy" class="card-img" alt="Elma"></div>
+                    <div class="card-body">
+                        <h3 class="card-title">Elma Dilim Patates (Jumbo Boy)</h3>
+                        <div class="card-footer"><div><span class="old-price">150₺</span><span class="price">109,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
                     </div>
                 </div>
             </div>
@@ -873,31 +1071,34 @@
             <h2 class="category-header">Soslar</h2>
             <div class="menu-grid">
                 <div class="menu-card" style="height: 100px;">
-                    <div class="card-body">
-                        <h3 class="card-title">Ketçap</h3>
-                        <div class="card-footer">
-                             <span class="price">9,90₺</span>
-                            <a href="tel:05312551078" class="add-btn">+</a>
-                        </div>
-                    </div>
+                    <div class="card-body"><h3 class="card-title">Ketçap (Adet)</h3><div class="card-footer"><span class="price">9,90₺</span><a href="tel:05312551078" class="add-btn">+</a></div></div>
                 </div>
                 <div class="menu-card" style="height: 100px;">
-                    <div class="card-body">
-                        <h3 class="card-title">Mayonez</h3>
-                        <div class="card-footer">
-                             <span class="price">9,90₺</span>
-                            <a href="tel:05312551078" class="add-btn">+</a>
-                        </div>
-                    </div>
+                    <div class="card-body"><h3 class="card-title">Mayonez (Adet)</h3><div class="card-footer"><span class="price">9,90₺</span><a href="tel:05312551078" class="add-btn">+</a></div></div>
+                </div>
+                <div class="menu-card" style="height: 100px;">
+                    <div class="card-body"><h3 class="card-title">Sarımsaklı Mayonez (Adet)</h3><div class="card-footer"><span class="price">19,90₺</span><a href="tel:05312551078" class="add-btn">+</a></div></div>
+                </div>
+                <div class="menu-card" style="height: 100px;">
+                    <div class="card-body"><h3 class="card-title">Meksika Sos (Adet)</h3><div class="card-footer"><span class="price">19,90₺</span><a href="tel:05312551078" class="add-btn">+</a></div></div>
+                </div>
+                <div class="menu-card" style="height: 100px;">
+                    <div class="card-body"><h3 class="card-title">Acı Sos (Adet)</h3><div class="card-footer"><span class="price">19,90₺</span><a href="tel:05312551078" class="add-btn">+</a></div></div>
+                </div>
+                <div class="menu-card" style="height: 100px;">
+                    <div class="card-body"><h3 class="card-title">Buffalo Sos (Adet)</h3><div class="card-footer"><span class="price">19,90₺</span><a href="tel:05312551078" class="add-btn">+</a></div></div>
+                </div>
+                <div class="menu-card" style="height: 100px;">
+                    <div class="card-body"><h3 class="card-title">Barbekü Sos (Adet)</h3><div class="card-footer"><span class="price">19,90₺</span><a href="tel:05312551078" class="add-btn">+</a></div></div>
+                </div>
+                <div class="menu-card" style="height: 100px;">
+                    <div class="card-body"><h3 class="card-title">Ranch Sos (Adet)</h3><div class="card-footer"><span class="price">19,90₺</span><a href="tel:05312551078" class="add-btn">+</a></div></div>
                 </div>
                  <div class="menu-card" style="height: 100px;">
-                    <div class="card-body">
-                        <h3 class="card-title">Ranch Sos</h3>
-                        <div class="card-footer">
-                             <span class="price">19,90₺</span>
-                            <a href="tel:05312551078" class="add-btn">+</a>
-                        </div>
-                    </div>
+                    <div class="card-body"><h3 class="card-title">Ballı Hardal (Adet)</h3><div class="card-footer"><span class="price">19,90₺</span><a href="tel:05312551078" class="add-btn">+</a></div></div>
+                </div>
+                 <div class="menu-card" style="height: 100px;">
+                    <div class="card-body"><h3 class="card-title">Chipotle Sos (Adet)</h3><div class="card-footer"><span class="price">39,90₺</span><a href="tel:05312551078" class="add-btn">+</a></div></div>
                 </div>
             </div>
         </div>
@@ -907,49 +1108,155 @@
             <div class="menu-grid">
                 <div class="menu-card">
                     <div class="card-img-container" style="background:white; padding:10px;">
-                        <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=400&q=60" loading="lazy" class="card-img" style="object-fit:contain;" alt="Kola">
+                        <img src="" loading="lazy" class="card-img" style="object-fit:contain;" alt="Kola">
                     </div>
                     <div class="card-body">
-                        <h3 class="card-title">Coca Cola (330ml)</h3>
-                        <div class="card-footer">
-                             <div>
-                                <span class="old-price">70₺</span>
-                                <span class="price">49,90₺</span>
-                            </div>
-                            <a href="tel:05312551078" class="add-btn">+</a>
-                        </div>
+                        <h3 class="card-title">Coca Cola (330 ml)</h3>
+                        <div class="card-footer"><div><span class="old-price">70₺</span><span class="price">49,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
                     </div>
                 </div>
-                
                 <div class="menu-card">
                     <div class="card-img-container" style="background:white; padding:10px;">
-                        <img src="https://images.unsplash.com/photo-1625772299848-391b6a87d7b3?w=400&q=60" loading="lazy" class="card-img" style="object-fit:contain;" alt="Fanta">
+                        <img src="" loading="lazy" class="card-img" style="object-fit:contain;" alt="Zero">
                     </div>
                     <div class="card-body">
-                        <h3 class="card-title">Sprite (330ml)</h3>
-                        <div class="card-footer">
-                             <div>
-                                <span class="old-price">70₺</span>
-                                <span class="price">49,90₺</span>
-                            </div>
-                            <a href="tel:05312551078" class="add-btn">+</a>
-                        </div>
+                        <h3 class="card-title">Coca Cola Zero Sugar (330 ml)</h3>
+                        <div class="card-footer"><div><span class="old-price">70₺</span><span class="price">49,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
                     </div>
                 </div>
-
                 <div class="menu-card">
                     <div class="card-img-container" style="background:white; padding:10px;">
-                        <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=400&q=60" loading="lazy" class="card-img" style="object-fit:contain;" alt="Ayran">
+                        <img src="" loading="lazy" class="card-img" style="object-fit:contain;" alt="Fanta">
                     </div>
                     <div class="card-body">
-                        <h3 class="card-title">Ayran (270ml)</h3>
-                        <div class="card-footer">
-                             <div>
-                                <span class="old-price">55₺</span>
-                                <span class="price">39,90₺</span>
-                            </div>
-                            <a href="tel:05312551078" class="add-btn">+</a>
-                        </div>
+                        <h3 class="card-title">Fanta (330 ml)</h3>
+                        <div class="card-footer"><div><span class="old-price">70₺</span><span class="price">49,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="card-img-container" style="background:white; padding:10px;">
+                        <img src="" loading="lazy" class="card-img" style="object-fit:contain;" alt="Sprite">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Sprite (330 ml)</h3>
+                        <div class="card-footer"><div><span class="old-price">70₺</span><span class="price">49,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="card-img-container" style="background:white; padding:10px;">
+                        <img src="" loading="lazy" class="card-img" style="object-fit:contain;" alt="Mango">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Fuse Tea Mango (330 ml)</h3>
+                        <div class="card-footer"><div><span class="old-price">70₺</span><span class="price">49,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="card-img-container" style="background:white; padding:10px;">
+                        <img src="" loading="lazy" class="card-img" style="object-fit:contain;" alt="Şeftali">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Fuse Tea Şeftali (330 ml)</h3>
+                        <div class="card-footer"><div><span class="old-price">70₺</span><span class="price">49,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="card-img-container" style="background:white; padding:10px;">
+                        <img src="" loading="lazy" class="card-img" style="object-fit:contain;" alt="Limon">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Fuse Tea Limon (330 ml)</h3>
+                        <div class="card-footer"><div><span class="old-price">70₺</span><span class="price">49,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="card-img-container" style="background:white; padding:10px;">
+                        <img src="" loading="lazy" class="card-img" style="object-fit:contain;" alt="Ayran">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Ayran (270 ml)</h3>
+                        <div class="card-footer"><div><span class="old-price">55₺</span><span class="price">39,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="card-img-container" style="background:white; padding:10px;">
+                        <img src="" loading="lazy" class="card-img" style="object-fit:contain;" alt="Şalgam">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Acısız Şalgam Suyu (300 ml)</h3>
+                        <div class="card-footer"><div><span class="old-price">65₺</span><span class="price">39,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="card-img-container" style="background:white; padding:10px;">
+                        <img src="" loading="lazy" class="card-img" style="object-fit:contain;" alt="Şalgam">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Acılı Şalgam Suyu (300 ml)</h3>
+                        <div class="card-footer"><div><span class="old-price">65₺</span><span class="price">39,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="card-img-container" style="background:white; padding:10px;">
+                        <img src="" loading="lazy" class="card-img" style="object-fit:contain;" alt="Su">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Su (500 ml)</h3>
+                        <div class="card-footer"><div><span class="old-price">25₺</span><span class="price">15,00₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="card-img-container" style="background:white; padding:10px;">
+                        <img src="" loading="lazy" class="card-img" style="object-fit:contain;" alt="Cola 1L">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Coca Cola (1 L)</h3>
+                        <div class="card-footer"><div><span class="old-price">90₺</span><span class="price">69,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="card-img-container" style="background:white; padding:10px;">
+                        <img src="" loading="lazy" class="card-img" style="object-fit:contain;" alt="Fanta 1L">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Fanta (1 L)</h3>
+                        <div class="card-footer"><div><span class="old-price">90₺</span><span class="price">69,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="card-img-container" style="background:white; padding:10px;">
+                        <img src="" loading="lazy" class="card-img" style="object-fit:contain;" alt="Sprite 1L">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Sprite (1 L)</h3>
+                        <div class="card-footer"><div><span class="old-price">90₺</span><span class="price">69,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="card-img-container" style="background:white; padding:10px;">
+                        <img src="" loading="lazy" class="card-img" style="object-fit:contain;" alt="Limon 1L">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Fuse Tea Limon (1 L)</h3>
+                        <div class="card-footer"><div><span class="old-price">90₺</span><span class="price">69,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="card-img-container" style="background:white; padding:10px;">
+                        <img src="" loading="lazy" class="card-img" style="object-fit:contain;" alt="Şeftali 1L">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Fuse Tea Şeftali (1 L)</h3>
+                        <div class="card-footer"><div><span class="old-price">90₺</span><span class="price">69,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="card-img-container" style="background:white; padding:10px;">
+                        <img src="" loading="lazy" class="card-img" style="object-fit:contain;" alt="Mango 1L">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Fuse Tea Mango (1 L)</h3>
+                        <div class="card-footer"><div><span class="old-price">90₺</span><span class="price">69,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
                     </div>
                 </div>
             </div>
