@@ -49,23 +49,52 @@
             text-transform: uppercase;
         }
 
-        /* --- NEON ANIMASYONLARI (YENİ) --- */
+        /* --- DÜZELTİLMİŞ NEON ANİMASYONLARI --- */
+        /* Kendi renginde, biraz daha güçlü parlama */
         @keyframes neon-pulse-blue {
             from {
-                text-shadow: 0 0 5px rgba(0, 242, 234, 0.4), 0 0 10px rgba(0, 242, 234, 0.3);
+                text-shadow: 0 0 10px rgba(0, 242, 234, 0.4), 0 0 20px rgba(0, 242, 234, 0.2);
+                opacity: 0.9;
             }
             to {
-                text-shadow: 0 0 20px rgba(0, 242, 234, 1), 0 0 30px rgba(0, 242, 234, 0.8);
+                text-shadow: 0 0 20px rgba(0, 242, 234, 0.9), 0 0 30px rgba(0, 242, 234, 0.7), 0 0 40px rgba(0, 242, 234, 0.5);
+                opacity: 1;
             }
         }
 
         @keyframes neon-pulse-red {
             from {
-                text-shadow: 0 0 5px rgba(255, 0, 85, 0.4), 0 0 10px rgba(255, 0, 85, 0.3);
+                text-shadow: 0 0 10px rgba(255, 0, 85, 0.4), 0 0 20px rgba(255, 0, 85, 0.2);
+                opacity: 0.9;
             }
             to {
-                text-shadow: 0 0 20px rgba(255, 0, 85, 1), 0 0 30px rgba(255, 0, 85, 0.8);
+                text-shadow: 0 0 20px rgba(255, 0, 85, 0.9), 0 0 30px rgba(255, 0, 85, 0.7), 0 0 40px rgba(255, 0, 85, 0.5);
+                opacity: 1;
             }
+        }
+
+        /* --- TELEFON SALLANMA DÖNGÜSÜ (4sn Toplam) --- */
+        @keyframes phone-shake-cycle {
+            /* 0% - 37.5% Arası Sallanma (1.5 Saniye) */
+            0% { transform: rotate(0deg) scale(1); }
+            2.5% { transform: rotate(15deg) scale(1.1); }
+            5% { transform: rotate(-15deg) scale(1.1); }
+            7.5% { transform: rotate(15deg) scale(1.1); }
+            10% { transform: rotate(-15deg) scale(1.1); }
+            12.5% { transform: rotate(15deg) scale(1.1); }
+            15% { transform: rotate(-15deg) scale(1.1); }
+            17.5% { transform: rotate(15deg) scale(1.1); }
+            20% { transform: rotate(-15deg) scale(1.1); }
+            22.5% { transform: rotate(15deg) scale(1.1); }
+            25% { transform: rotate(-15deg) scale(1.1); }
+            27.5% { transform: rotate(15deg) scale(1.1); }
+            30% { transform: rotate(-15deg) scale(1.1); }
+            32.5% { transform: rotate(15deg) scale(1.1); }
+            35% { transform: rotate(-15deg) scale(1.1); }
+            37.5% { transform: rotate(0deg) scale(1); } 
+            
+            /* 37.5% - 100% Arası Bekleme (2.5 Saniye) */
+            100% { transform: rotate(0deg) scale(1); } 
         }
 
         /* --- SCROLL HEDEF AYARI --- */
@@ -130,20 +159,18 @@
         .logo-container { display: flex; flex-direction: column; }
         
         .logo-top {
-            color: var(--neon-blue);
+            color: var(--neon-blue); /* Kendi rengi geri geldi */
             font-size: 1.2rem;
             font-weight: 700;
             line-height: 1;
-            /* Mavi Neon Animasyonu */
             animation: neon-pulse-blue 1.5s ease-in-out infinite alternate;
         }
 
         .logo-bottom {
-            color: var(--neon-red);
+            color: var(--neon-red); /* Kendi rengi geri geldi */
             font-size: 1.2rem;
             font-weight: 700;
             line-height: 1;
-            /* Kırmızı Neon Animasyonu */
             animation: neon-pulse-red 1.5s ease-in-out infinite alternate;
         }
 
@@ -162,6 +189,13 @@
         
         .call-btn span { font-size: 0.9rem; font-weight: bold; }
         .call-btn small { font-size: 0.7rem; color: #fff; }
+
+        /* Telefon İkonu Animasyonu */
+        .call-btn i {
+            display: inline-block;
+            animation: phone-shake-cycle 4s infinite;
+            transform-origin: center;
+        }
 
         /* --- KATEGORİ MENÜSÜ --- */
         .category-nav-wrapper {
@@ -830,21 +864,21 @@
                     </div>
                 </div>
                  <div class="menu-card">
-                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&q=60" loading="lazy" class="card-img" alt="Et Döner"></div>
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&q=60" loading="lazy" class="card-img" alt="M-Et Döner Pizza"></div>
                     <div class="card-body">
                         <h3 class="card-title">M-Et Döner Pizza</h3>
                         <div class="card-footer"><div><span class="old-price">350₺</span><span class="price">289,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
                     </div>
                 </div>
                  <div class="menu-card">
-                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1593560708920-638709ee05bd?w=400&q=60" loading="lazy" class="card-img" alt="Dallas"></div>
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1593560708920-638709ee05bd?w=400&q=60" loading="lazy" class="card-img" alt="Dallas Pizza"></div>
                     <div class="card-body">
                         <h3 class="card-title">Dallas Pizza</h3>
                         <div class="card-footer"><div><span class="old-price">350₺</span><span class="price">289,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
                     </div>
                 </div>
                  <div class="menu-card">
-                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=400&q=60" loading="lazy" class="card-img" alt="Meat"></div>
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=400&q=60" loading="lazy" class="card-img" alt="Breaking Meat Pizza"></div>
                     <div class="card-body">
                         <h3 class="card-title">Breaking Meat Pizza</h3>
                         <div class="card-footer"><div><span class="old-price">360₺</span><span class="price">299,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
@@ -948,7 +982,7 @@
                     </div>
                 </div>
                  <div class="menu-card">
-                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&q=60" loading="lazy" class="card-img" alt="M-Et Döner Pizza"></div>
+                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&q=60" loading="lazy" class="card-img" alt="Et Döner"></div>
                     <div class="card-body">
                         <h3 class="card-title">M-Et Döner Pizza</h3>
                         <div class="card-footer"><div><span class="old-price">490₺</span><span class="price">379,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
@@ -966,13 +1000,6 @@
                     <div class="card-body">
                         <h3 class="card-title">Breaking Meat Pizza</h3>
                         <div class="card-footer"><div><span class="old-price">490₺</span><span class="price">389,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
-                    </div>
-                </div>
-                 <div class="menu-card">
-                    <div class="card-img-container"><img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400&q=60" loading="lazy" class="card-img" alt="Pastırma Low Pizza"></div>
-                    <div class="card-body">
-                        <h3 class="card-title">Pastırma Low Pizza</h3>
-                        <div class="card-footer"><div><span class="old-price">490₺</span><span class="price">379,90₺</span></div><a href="tel:05312551078" class="add-btn">+</a></div>
                     </div>
                 </div>
             </div>
@@ -1388,4 +1415,3 @@
     </script>
 </body>
 </html>
-
