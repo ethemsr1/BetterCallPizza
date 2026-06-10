@@ -21,7 +21,7 @@
             --getir: #5d3ebc;
             --trendyol: #f27a1a;
 
-            /* Sabitler */
+            
             --header-height: 160px;
         }
 
@@ -49,8 +49,7 @@
             text-transform: uppercase;
         }
 
-        /* --- DÜZELTİLMİŞ NEON ANİMASYONLARI --- */
-        /* Kendi renginde, biraz daha güçlü parlama */
+    
         @keyframes neon-pulse-blue {
             from {
                 text-shadow: 0 0 10px rgba(0, 242, 234, 0.4), 0 0 20px rgba(0, 242, 234, 0.2);
@@ -73,9 +72,9 @@
             }
         }
 
-        /* --- TELEFON SALLANMA DÖNGÜSÜ (4sn Toplam) --- */
+      
         @keyframes phone-shake-cycle {
-            /* 0% - 37.5% Arası Sallanma (1.5 Saniye) */
+           
             0% { transform: rotate(0deg) scale(1); }
             2.5% { transform: rotate(15deg) scale(1.1); }
             5% { transform: rotate(-15deg) scale(1.1); }
@@ -93,16 +92,14 @@
             35% { transform: rotate(-15deg) scale(1.1); }
             37.5% { transform: rotate(0deg) scale(1); } 
             
-            /* 37.5% - 100% Arası Bekleme (2.5 Saniye) */
             100% { transform: rotate(0deg) scale(1); } 
         }
 
-        /* --- SCROLL HEDEF AYARI --- */
+        
         .menu-section {
             scroll-margin-top: 165px;
         }
 
-        /* --- DELIVERY BAR --- */
         .delivery-bar {
             position: fixed;
             top: 0;
@@ -140,7 +137,6 @@
         .btn-getir { background-color: var(--getir); }
         .btn-trendyol { background-color: var(--trendyol); }
 
-        /* --- NAVIGATION --- */
         nav {
             display: flex;
             justify-content: space-between;
@@ -190,14 +186,12 @@
         .call-btn span { font-size: 0.9rem; font-weight: bold; }
         .call-btn small { font-size: 0.7rem; color: #fff; }
 
-        /* Telefon İkonu Animasyonu */
         .call-btn i {
             display: inline-block;
             animation: phone-shake-cycle 4s infinite;
             transform-origin: center;
         }
 
-        /* --- KATEGORİ MENÜSÜ --- */
         .category-nav-wrapper {
             position: sticky;
             top: 110px;
@@ -250,7 +244,6 @@
             transform: scale(1.05);
         }
 
-        /* --- HERO --- */
         .hero {
             height: 35vh;
             background: url('https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60') center/cover;
@@ -287,7 +280,6 @@
             display: inline-block;
         }
 
-        /* --- MENU --- */
         .menu-wrapper {
             max-width: 1200px;
             margin: 0 auto;
@@ -467,7 +459,6 @@
             padding-bottom: 20px;
         }
 
-        /* Mobil Düzenlemeler */
         @media (max-width: 480px) {
             .hero h1 { font-size: 1.8rem; }
             .delivery-btn i { font-size: 1.1rem; }
@@ -1404,7 +1395,6 @@
                 observer.observe(section);
             });
 
-            // Tıklama ile gitme işlemi
             links.forEach(link => {
                 link.addEventListener('click', (e) => {
                     links.forEach(l => l.classList.remove('active'));
